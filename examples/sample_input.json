@@ -1,0 +1,72 @@
+{
+  "system_name": "SampleLayeredSystem",
+  "confidence_threshold": 0.75,
+  "architecture_graph": {
+    "schema_version": "1.0.0",
+    "nodes": [
+      {
+        "id": "presentation.OrderController",
+        "name": "OrderController",
+        "type": "service",
+        "c4_level": "component",
+        "properties": {
+          "layer": "presentation"
+        }
+      },
+      {
+        "id": "business.OrderService",
+        "name": "OrderService",
+        "type": "service",
+        "c4_level": "component",
+        "properties": {
+          "layer": "business"
+        }
+      },
+      {
+        "id": "data_access.OrderRepository",
+        "name": "OrderRepository",
+        "type": "database",
+        "c4_level": "component",
+        "properties": {
+          "layer": "data_access"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "a1",
+        "source_id": "presentation.OrderController",
+        "target_id": "business.OrderService",
+        "relationship_type": "sync_call"
+      }
+    ]
+  },
+  "code_graph": {
+    "nodes": [
+      {
+        "id": "src/presentation/order_controller.py",
+        "name": "OrderController",
+        "type": "module",
+        "file_path": "src/presentation/order_controller.py",
+        "language": "python"
+      },
+      {
+        "id": "src/data_access/order_repository.py",
+        "name": "OrderRepository",
+        "type": "module",
+        "file_path": "src/data_access/order_repository.py",
+        "language": "python"
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "src/presentation/order_controller.py",
+        "target_id": "src/data_access/order_repository.py",
+        "relationship_type": "import",
+        "file_path": "src/presentation/order_controller.py",
+        "line_number": 42,
+        "code_snippet": "from data_access.order_repository import OrderRepository"
+      }
+    ]
+  }
+}

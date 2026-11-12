@@ -1,0 +1,103 @@
+{
+  "dataset_version": "1.0.0",
+  "description": "Ground-truth manifest defined independently from CCA predictions. Each case describes one controlled graph-level scenario.",
+  "cases": [
+    {
+      "id": "CCA-001",
+      "name": "consistent-layered-project",
+      "description": "Every observed dependency is declared and respects layer order.",
+      "expected_violations": [],
+      "expected_drift_candidates": []
+    },
+    {
+      "id": "CCA-002",
+      "name": "layer-skipping",
+      "description": "Presentation depends directly on data_access while business is skipped.",
+      "expected_violations": [
+        "layer_skipping"
+      ],
+      "expected_drift_candidates": [
+        "undeclared_edge"
+      ]
+    },
+    {
+      "id": "CCA-003",
+      "name": "back-call",
+      "description": "A lower data_access layer depends on the higher business layer.",
+      "expected_violations": [
+        "back_call"
+      ],
+      "expected_drift_candidates": [
+        "undeclared_edge"
+      ]
+    },
+    {
+      "id": "CCA-004",
+      "name": "cross-module",
+      "description": "A dependency crosses two explicitly configured modules.",
+      "expected_violations": [
+        "cross_module"
+      ],
+      "expected_drift_candidates": [
+        "undeclared_edge"
+      ]
+    },
+    {
+      "id": "CCA-005",
+      "name": "circular-dependency",
+      "description": "Two architecture components form a directed cycle.",
+      "expected_violations": [
+        "circular_dependency"
+      ],
+      "expected_drift_candidates": []
+    },
+    {
+      "id": "CCA-006",
+      "name": "undeclared-edge",
+      "description": "Code contains an otherwise layer-valid dependency absent from the design graph.",
+      "expected_violations": [],
+      "expected_drift_candidates": [
+        "undeclared_edge"
+      ]
+    },
+    {
+      "id": "CCA-007",
+      "name": "missing-edge",
+      "description": "The design declares a dependency not observed in CodeGraph.",
+      "expected_violations": [],
+      "expected_drift_candidates": [
+        "missing_edge"
+      ]
+    },
+    {
+      "id": "CCA-008",
+      "name": "unmapped-node",
+      "description": "A source node has no unambiguous architecture mapping.",
+      "expected_violations": [],
+      "expected_drift_candidates": [
+        "unmapped_node"
+      ]
+    },
+    {
+      "id": "CCA-009",
+      "name": "combined-violations",
+      "description": "A project contains both a back-call and a cycle.",
+      "expected_violations": [
+        "back_call",
+        "circular_dependency"
+      ],
+      "expected_drift_candidates": [
+        "undeclared_edge"
+      ]
+    },
+    {
+      "id": "CCA-010",
+      "name": "ambiguous-mapping",
+      "description": "Two architecture candidates have equivalent names; automatic mapping must be withheld.",
+      "expected_violations": [],
+      "expected_drift_candidates": [
+        "unmapped_node"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,930 @@
+{
+  "schema_version": "1.0.0",
+  "agent_name": "Consistency Checking Agent",
+  "project_id": "library-2_wrong",
+  "scan_id": "scan-2_wrong",
+  "commit_hash": "",
+  "generated_at": "2026-11-26T17:31:55+00:00",
+  "status": "SUCCESS",
+  "strategy": {
+    "scope": "full",
+    "focus_components": [],
+    "matching_rounds": 3,
+    "deep_matching": false,
+    "confidence_threshold": 0.7,
+    "mapping_accept_threshold": 0.75,
+    "review_mode": "local",
+    "review_scope": "all",
+    "llm_budget": 0,
+    "reasons": [
+      "P2: chưa có lần quét trước trong Knowledge -> quét toàn bộ.",
+      "P8: chưa cấu hình LLM -> review bằng RAG + few-shot cục bộ (offline)."
+    ],
+    "source": "agent"
+  },
+  "adaptation_trace": [
+    {
+      "phase": "monitor",
+      "detail": {
+        "design_components": 7,
+        "design_edges": 7,
+        "code_modules": 10,
+        "code_dependencies": 10,
+        "internal_dependencies": 7,
+        "unresolved_imports": 0,
+        "sca_status": "SUCCESS",
+        "design_avg_confidence": 0.9857,
+        "design_signature": "553992322a49681b",
+        "has_baseline": false,
+        "baseline_scan_id": null,
+        "top_level_packages": 5
+      }
+    },
+    {
+      "phase": "analyze",
+      "detail": {
+        "size_class": "small",
+        "design_changed": false,
+        "changed_packages": [],
+        "change_ratio": 0.0,
+        "ambiguity_ratio": 0.0,
+        "previous_low_confidence_ratio": 0.0,
+        "data_quality": "good",
+        "ambiguous_components": 0,
+        "expected_components": 5
+      }
+    },
+    {
+      "phase": "plan",
+      "detail": {
+        "scope": "full",
+        "focus_components": [],
+        "matching_rounds": 3,
+        "deep_matching": false,
+        "confidence_threshold": 0.7,
+        "mapping_accept_threshold": 0.75,
+        "review_mode": "local",
+        "review_scope": "all",
+        "llm_budget": 0,
+        "reasons": [
+          "P2: chưa có lần quét trước trong Knowledge -> quét toàn bộ.",
+          "P8: chưa cấu hình LLM -> review bằng RAG + few-shot cục bộ (offline)."
+        ],
+        "source": "agent"
+      }
+    },
+    {
+      "phase": "execute",
+      "detail": {
+        "mapping_status": {
+          "not_applicable": 2,
+          "confirmed": 5
+        },
+        "explicit_mappings": 0,
+        "reused_mappings": 0,
+        "rejected_pairs": 0,
+        "rule_engine": {
+          "explicit_rules": 1,
+          "require_rules": 0,
+          "layers": [
+            "presentation",
+            "application",
+            "infrastructure",
+            "domain"
+          ],
+          "default_policy": "design_only",
+          "derived_from_design": true
+        },
+        "findings": 3,
+        "carried_over": 0
+      }
+    },
+    {
+      "phase": "execute",
+      "detail": {
+        "step": "scenario_classification+review",
+        "verdict": "mismatch",
+        "primary_scenario": "wrong",
+        "counts": {
+          "match": 10,
+          "wrong": 2,
+          "missing": 0,
+          "junk": 0,
+          "uncertain": 0
+        },
+        "mode": "local",
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "reviewed": 3,
+        "llm_calls": 0,
+        "cache_hits": 0,
+        "fallbacks": 0,
+        "status_changes": 0,
+        "disagreements": 0
+      }
+    },
+    {
+      "phase": "knowledge",
+      "detail": {
+        "persisted": false,
+        "reason": "Knowledge bị tắt"
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "design_id": "reader",
+      "design_name": "Bạn đọc",
+      "design_type": "actor",
+      "code_packages": [],
+      "module_count": 0,
+      "confidence": 0.0,
+      "status": "not_applicable",
+      "method": "n/a",
+      "name_score": 0.0,
+      "structure_score": null,
+      "alternatives": [],
+      "reason": "Loại 'actor' mô tả bối cảnh, không kỳ vọng có trong mã nguồn."
+    },
+    {
+      "design_id": "api",
+      "design_name": "API",
+      "design_type": "ui",
+      "code_packages": [
+        "api"
+      ],
+      "module_count": 2,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "api.routes",
+          "score": 0.7
+        },
+        {
+          "code_package": "models",
+          "score": 0.7
+        },
+        {
+          "code_package": "models.book",
+          "score": 0.7
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "services",
+      "design_name": "Services",
+      "design_type": "service",
+      "code_packages": [
+        "services"
+      ],
+      "module_count": 2,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "services.loan_service",
+          "score": 0.8347
+        },
+        {
+          "code_package": "repositories",
+          "score": 0.441
+        },
+        {
+          "code_package": "repositories.book_repo",
+          "score": 0.4
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "repositories",
+      "design_name": "Repositories",
+      "design_type": "service",
+      "code_packages": [
+        "repositories"
+      ],
+      "module_count": 2,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "repositories.book_repo",
+          "score": 0.8484
+        },
+        {
+          "code_package": "notifications",
+          "score": 0.4906
+        },
+        {
+          "code_package": "models.book",
+          "score": 0.4572
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "notifications",
+      "design_name": "Notifications",
+      "design_type": "service",
+      "code_packages": [
+        "notifications"
+      ],
+      "module_count": 2,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "repositories",
+          "score": 0.7487
+        },
+        {
+          "code_package": "models.book",
+          "score": 0.7433
+        },
+        {
+          "code_package": "repositories.book_repo",
+          "score": 0.7346
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "models",
+      "design_name": "Models",
+      "design_type": "service",
+      "code_packages": [
+        "models"
+      ],
+      "module_count": 2,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "models.book",
+          "score": 0.7385
+        },
+        {
+          "code_package": "notifications.mailer",
+          "score": 0.4864
+        },
+        {
+          "code_package": "repositories.book_repo",
+          "score": 0.4654
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "database",
+      "design_name": "Database",
+      "design_type": "database",
+      "code_packages": [],
+      "module_count": 0,
+      "confidence": 0.0,
+      "status": "not_applicable",
+      "method": "n/a",
+      "name_score": 0.0,
+      "structure_score": null,
+      "alternatives": [],
+      "reason": "Loại 'database' mô tả bối cảnh, không kỳ vọng có trong mã nguồn."
+    }
+  ],
+  "dependencies": [
+    {
+      "source": "api",
+      "target": "repositories",
+      "reflexion": "divergence",
+      "verdict": "forbidden",
+      "rule_id": "R1",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "api/routes.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import repositories.book_repo -> repositories.book_repo (internal)"
+        }
+      ]
+    },
+    {
+      "source": "api",
+      "target": "services",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:api->services",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "api/routes.py",
+          "line_start": 3,
+          "line_end": 3,
+          "statement": "import services.loan_service -> services.loan_service (internal)"
+        }
+      ]
+    },
+    {
+      "source": "models",
+      "target": "services",
+      "reflexion": "divergence",
+      "verdict": "forbidden",
+      "rule_id": "LAYER:domain->application",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "models/book.py",
+          "line_start": 11,
+          "line_end": 11,
+          "statement": "import services.loan_service -> services.loan_service (internal)"
+        }
+      ]
+    },
+    {
+      "source": "repositories",
+      "target": "models",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:repositories->models",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "repositories/book_repo.py",
+          "line_start": 4,
+          "line_end": 4,
+          "statement": "import models.book -> models.book (internal)"
+        }
+      ]
+    },
+    {
+      "source": "services",
+      "target": "models",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:services->models",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "services/loan_service.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import models.book -> models.book (internal)"
+        }
+      ]
+    },
+    {
+      "source": "services",
+      "target": "notifications",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:services->notifications",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "services/loan_service.py",
+          "line_start": 3,
+          "line_end": 3,
+          "statement": "import notifications.mailer -> notifications.mailer (internal)"
+        }
+      ]
+    },
+    {
+      "source": "services",
+      "target": "repositories",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:services->repositories",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "services/loan_service.py",
+          "line_start": 4,
+          "line_end": 4,
+          "statement": "import repositories.book_repo -> repositories.book_repo (internal)"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "CCA-0001",
+      "fingerprint": "4b9dbd11e26e319a",
+      "violation_type": "forbidden_dependency",
+      "severity": "high",
+      "confidence_score": 0.955,
+      "confidence_breakdown": {
+        "mapping": 0.955,
+        "rule_clarity": 1.0,
+        "evidence": 1.0,
+        "data_completeness": 1.0,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "confirmed",
+      "detected_by": "rule_engine",
+      "rule_id": "R1",
+      "description": "API không được truy cập Repository trực tiếp; phải đi qua Services. (1 lần import)",
+      "source_component": "api",
+      "target_component": "repositories",
+      "expected_dependency": "api -/-> repositories (bị cấm)",
+      "actual_dependency": "api -> repositories",
+      "file_path": "api/routes.py",
+      "line_number": 2,
+      "evidence": [
+        {
+          "file_path": "api/routes.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import repositories.book_repo -> repositories.book_repo (internal)"
+        }
+      ],
+      "recommended_action": "Loại bỏ phụ thuộc trực tiếp api -> repositories; đi qua component trung gian được phép (vd interface/use case) hoặc đảo phụ thuộc bằng abstraction.",
+      "carried_over": false,
+      "scenario": "wrong",
+      "scenario_detail": "forbidden_dependency",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "wrong",
+        "confidence": 0.9243,
+        "rationale": "Gần nhất với ví dụ fs-wrong-1 (confirm): Có câu lệnh import cụ thể vi phạm luật tường minh: presentation gọi tắt qua layer application. Tài liệu liên quan: [rule:R1] Luật R1 (forbid); [design:repositories] Thiết kế: Repositories.",
+        "suggested_fix": "Chuyển lời gọi BookRepository vào service và để API chỉ gọi service.",
+        "retrieved_docs": [
+          "rule:R1",
+          "design:repositories",
+          "scenarios#kich-ban-2-code-sai-so-voi-thiet-ke",
+          "clean_architecture#dao-nguoc-phu-thuoc-dependency-inversion"
+        ],
+        "cited_docs": [
+          "rule:R1",
+          "design:repositories"
+        ],
+        "few_shot_ids": [
+          "fs-wrong-1",
+          "fs-missing-4",
+          "fs-match-3"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    },
+    {
+      "finding_id": "CCA-0002",
+      "fingerprint": "777926d139798ce9",
+      "violation_type": "layer_violation",
+      "severity": "high",
+      "confidence_score": 0.9072,
+      "confidence_breakdown": {
+        "mapping": 0.955,
+        "rule_clarity": 0.95,
+        "evidence": 1.0,
+        "data_completeness": 1.0,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "confirmed",
+      "detected_by": "rule_engine",
+      "rule_id": "LAYER:domain->application",
+      "description": "Layer 'domain' (trong) phụ thuộc ngược lên layer 'application' (ngoài): models -> services. (1 lần import)",
+      "source_component": "models",
+      "target_component": "services",
+      "expected_dependency": "domain chỉ được phụ thuộc các layer bên trong",
+      "actual_dependency": "models -> services",
+      "file_path": "models/book.py",
+      "line_number": 11,
+      "evidence": [
+        {
+          "file_path": "models/book.py",
+          "line_start": 11,
+          "line_end": 11,
+          "statement": "import services.loan_service -> services.loan_service (internal)"
+        }
+      ],
+      "recommended_action": "Đảo chiều phụ thuộc: định nghĩa interface ở layer trong (models) và để layer ngoài (services) hiện thực nó (Dependency Inversion).",
+      "carried_over": false,
+      "scenario": "wrong",
+      "scenario_detail": "layer_violation",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "wrong",
+        "confidence": 1.0,
+        "rationale": "Gần nhất với ví dụ fs-wrong-2 (confirm): Domain không được biết tới service; import đặt trong hàm là dấu hiệu né chu trình import. Tài liệu liên quan: [design:services] Thiết kế: Services; [rule:layer:application] Layer application.",
+        "suggested_fix": "Định nghĩa interface ở domain hoặc truyền dữ liệu vào entity thay vì import service.",
+        "retrieved_docs": [
+          "design:services",
+          "rule:layer:application",
+          "design:models",
+          "rule:layer:domain"
+        ],
+        "cited_docs": [
+          "design:services",
+          "rule:layer:application"
+        ],
+        "few_shot_ids": [
+          "fs-wrong-2",
+          "fs-wrong-4",
+          "fs-missing-4"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    },
+    {
+      "finding_id": "CCA-0003",
+      "fingerprint": "8db2b4f5b47a5e5a",
+      "violation_type": "cyclic_dependency",
+      "severity": "medium",
+      "confidence_score": 0.8595,
+      "confidence_breakdown": {
+        "mapping": 0.955,
+        "rule_clarity": 0.9,
+        "evidence": 1.0,
+        "data_completeness": 1.0,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "confirmed",
+      "detected_by": "graph_matching",
+      "rule_id": "STRUCT:acyclic",
+      "description": "Chu trình phụ thuộc giữa các component: models -> services -> repositories -> models.",
+      "source_component": "models",
+      "target_component": "services",
+      "expected_dependency": "(không có chu trình)",
+      "actual_dependency": "models -> services -> repositories -> models",
+      "file_path": "models/book.py",
+      "line_number": 11,
+      "evidence": [
+        {
+          "file_path": "models/book.py",
+          "line_start": 11,
+          "line_end": 11,
+          "statement": "import services.loan_service -> services.loan_service (internal)"
+        },
+        {
+          "file_path": "services/loan_service.py",
+          "line_start": 4,
+          "line_end": 4,
+          "statement": "import repositories.book_repo -> repositories.book_repo (internal)"
+        },
+        {
+          "file_path": "repositories/book_repo.py",
+          "line_start": 4,
+          "line_end": 4,
+          "statement": "import models.book -> models.book (internal)"
+        }
+      ],
+      "recommended_action": "Phá chu trình models -> services -> repositories -> models: tách interface dùng chung hoặc chuyển phụ thuộc sang event.",
+      "carried_over": false,
+      "scenario": "wrong",
+      "scenario_detail": "cyclic_dependency",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "wrong",
+        "confidence": 1.0,
+        "rationale": "Gần nhất với ví dụ fs-wrong-2 (confirm): Domain không được biết tới service; import đặt trong hàm là dấu hiệu né chu trình import. Tài liệu liên quan: [design:models] Thiết kế: Models; [design:services] Thiết kế: Services.",
+        "suggested_fix": "Định nghĩa interface ở domain hoặc truyền dữ liệu vào entity thay vì import service.",
+        "retrieved_docs": [
+          "design:models",
+          "design:services",
+          "rule:R1",
+          "rule:layer:domain"
+        ],
+        "cited_docs": [
+          "design:models",
+          "design:services"
+        ],
+        "few_shot_ids": [
+          "fs-wrong-2",
+          "fs-missing-4",
+          "fs-wrong-1"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    }
+  ],
+  "drift": {
+    "design_components": 5,
+    "actual_components": 5,
+    "matched_components": 5,
+    "design_dependencies": 5,
+    "actual_dependencies": 7,
+    "convergences": 5,
+    "divergences": 2,
+    "absences": 0,
+    "component_coverage": 1.0,
+    "dependency_conformance": 0.7143,
+    "dependency_realization": 1.0,
+    "structural_similarity": 0.8333,
+    "drift_score": 0.1667,
+    "violation_index": 0.1522,
+    "drift_level": "low",
+    "previous_drift_score": null,
+    "drift_trend": null,
+    "changed_relations": {
+      "added_dependencies": [
+        "api -> repositories",
+        "models -> services"
+      ],
+      "removed_dependencies": [],
+      "added_components": [],
+      "missing_components": []
+    }
+  },
+  "scenario_report": {
+    "verdict": "mismatch",
+    "primary_scenario": "wrong",
+    "scenarios_present": [
+      "match",
+      "wrong"
+    ],
+    "counts": {
+      "match": 10,
+      "wrong": 2,
+      "missing": 0,
+      "junk": 0,
+      "uncertain": 0
+    },
+    "match": [
+      {
+        "kind": "component",
+        "source": "api",
+        "target": "api",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "services",
+        "target": "services",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "repositories",
+        "target": "repositories",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "notifications",
+        "target": "notifications",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "models",
+        "target": "models",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "api",
+        "target": "services",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "repositories",
+        "target": "models",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "services",
+        "target": "models",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "services",
+        "target": "notifications",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "services",
+        "target": "repositories",
+        "detail": "convergence",
+        "finding_ids": []
+      }
+    ],
+    "wrong": [
+      {
+        "kind": "dependency",
+        "source": "api",
+        "target": "repositories",
+        "detail": "forbidden_dependency",
+        "finding_ids": [
+          "CCA-0001"
+        ]
+      },
+      {
+        "kind": "dependency",
+        "source": "models",
+        "target": "services",
+        "detail": "layer_violation",
+        "finding_ids": [
+          "CCA-0002",
+          "CCA-0003"
+        ]
+      }
+    ],
+    "missing": [],
+    "junk": [],
+    "uncertain": [],
+    "match_ratio": 0.8333,
+    "summary": "Kết luận: KHÔNG khớp; kịch bản chính: code sai so với thiết kế. Tỷ lệ khớp 83% (10 phần tử khớp). Code sai so với thiết kế (2): api -> repositories, models -> services.",
+    "summary_by": "template"
+  },
+  "review": {
+    "mode": "local",
+    "provider": "local-fewshot",
+    "model": "knn-fewshot-v1",
+    "policy": "advisory",
+    "reviewed": 3,
+    "llm_calls": 0,
+    "cache_hits": 0,
+    "fallbacks": 0,
+    "local_fallback_reviews": 0,
+    "status_changes": 0,
+    "disagreements": 0,
+    "rag_documents": 33,
+    "few_shot_pool": 19,
+    "errors": []
+  },
+  "statistics": {
+    "total_findings": 3,
+    "open_violations": 3,
+    "by_type": {
+      "forbidden_dependency": 1,
+      "layer_violation": 1,
+      "cyclic_dependency": 1
+    },
+    "by_severity": {
+      "high": 2,
+      "medium": 1
+    },
+    "by_status": {
+      "confirmed": 3
+    },
+    "valid_dependencies": 5,
+    "invalid_dependencies": 2,
+    "undetermined_dependencies": 0
+  },
+  "visualization": {
+    "nodes": [
+      {
+        "id": "reader",
+        "label": "Bạn đọc",
+        "kind": "design",
+        "status": "context",
+        "layer": null
+      },
+      {
+        "id": "api",
+        "label": "API",
+        "kind": "design",
+        "status": "matched",
+        "layer": "presentation"
+      },
+      {
+        "id": "services",
+        "label": "Services",
+        "kind": "design",
+        "status": "matched",
+        "layer": "application"
+      },
+      {
+        "id": "repositories",
+        "label": "Repositories",
+        "kind": "design",
+        "status": "matched",
+        "layer": "infrastructure"
+      },
+      {
+        "id": "notifications",
+        "label": "Notifications",
+        "kind": "design",
+        "status": "matched",
+        "layer": "infrastructure"
+      },
+      {
+        "id": "models",
+        "label": "Models",
+        "kind": "design",
+        "status": "matched",
+        "layer": "domain"
+      },
+      {
+        "id": "database",
+        "label": "Database",
+        "kind": "design",
+        "status": "context",
+        "layer": null
+      }
+    ],
+    "edges": [
+      {
+        "source": "api",
+        "target": "repositories",
+        "reflexion": "divergence",
+        "verdict": "forbidden",
+        "weight": 1
+      },
+      {
+        "source": "api",
+        "target": "services",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      },
+      {
+        "source": "models",
+        "target": "services",
+        "reflexion": "divergence",
+        "verdict": "forbidden",
+        "weight": 1
+      },
+      {
+        "source": "repositories",
+        "target": "models",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      },
+      {
+        "source": "services",
+        "target": "models",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      },
+      {
+        "source": "services",
+        "target": "notifications",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      },
+      {
+        "source": "services",
+        "target": "repositories",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      }
+    ]
+  },
+  "performance": {
+    "total_ms": 11.668,
+    "phase_ms": {
+      "normalize": 0.58,
+      "monitor": 0.087,
+      "analyze": 1.017,
+      "plan": 0.035,
+      "graph_matching": 5.332,
+      "rule_engine_and_drift": 0.705,
+      "execute": 6.044,
+      "review": 3.884,
+      "knowledge": 0.021
+    },
+    "design_nodes": 7,
+    "design_edges": 7,
+    "code_modules": 10,
+    "code_dependencies": 10,
+    "internal_dependencies": 7,
+    "unresolved_imports": 0,
+    "llm_calls": 0
+  },
+  "warnings": [],
+  "errors": []
+}

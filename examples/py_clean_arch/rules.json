@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "default_policy": "design_only",
+  "layers": [
+    {"name": "presentation", "components": ["controllers"]},
+    {"name": "composition", "components": ["dependency_injection", "settings"]},
+    {"name": "application", "components": ["usecases"]},
+    {"name": "adapters", "components": ["repositories"]},
+    {"name": "domain", "components": ["entities"]}
+  ],
+  "layer_policy": "inward",
+  "component_mapping": {},
+  "derive_rules_from_design": true,
+  "ignore_code_packages": ["main"],
+  "rules": [
+    {"rule_id": "R1", "kind": "forbid", "source": "controllers", "target": "repositories", "severity": "high",
+     "description": "Controller không được gọi thẳng Repository; phải đi qua Use Case."},
+    {"rule_id": "R2", "kind": "forbid", "source": "layer:domain", "target": "external:sqlalchemy", "severity": "high",
+     "description": "Domain entities không được phụ thuộc ORM (Database Independence)."},
+    {"rule_id": "R3", "kind": "forbid", "source": "layer:application", "target": "external:fastapi", "severity": "high",
+     "description": "Use case không được phụ thuộc web framework (Framework Independence)."},
+    {"rule_id": "R4", "kind": "forbid", "source": "layer:domain", "target": "external:fastapi", "severity": "high",
+     "description": "Domain entities không được phụ thuộc web framework (Framework Independence)."},
+    {"rule_id": "R5", "kind": "require", "source": "controllers", "target": "usecases", "severity": "high",
+     "description": "Controller phải ủy quyền nghiệp vụ cho Use Case."}
+  ]
+}

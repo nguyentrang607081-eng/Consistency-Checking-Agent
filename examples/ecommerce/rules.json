@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "default_policy": "unspecified",
+  "rules": [
+    {"rule_id": "R1", "kind": "forbid", "source": "web_app", "target": "order_service", "severity": "high",
+     "description": "Web App không được gọi thẳng Order Service; mọi request phải đi qua API Gateway."}
+  ]
+}

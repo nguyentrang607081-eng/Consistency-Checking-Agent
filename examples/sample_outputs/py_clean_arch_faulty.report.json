@@ -1,0 +1,1645 @@
+{
+  "schema_version": "1.0.0",
+  "agent_name": "Consistency Checking Agent",
+  "project_id": "py-clean-arch",
+  "scan_id": "scan-2-faulty",
+  "commit_hash": "",
+  "generated_at": "2026-11-26T17:31:55+00:00",
+  "status": "SUCCESS",
+  "strategy": {
+    "scope": "full",
+    "focus_components": [],
+    "matching_rounds": 3,
+    "deep_matching": false,
+    "confidence_threshold": 0.7,
+    "mapping_accept_threshold": 0.75,
+    "review_mode": "local",
+    "review_scope": "all",
+    "llm_budget": 0,
+    "reasons": [
+      "P3: đồ thị nhỏ (79 module, 9 component) -> quét toàn bộ.",
+      "P8: chưa cấu hình LLM -> review bằng RAG + few-shot cục bộ (offline)."
+    ],
+    "source": "agent"
+  },
+  "adaptation_trace": [
+    {
+      "phase": "monitor",
+      "detail": {
+        "design_components": 9,
+        "design_edges": 13,
+        "code_modules": 79,
+        "code_dependencies": 284,
+        "internal_dependencies": 189,
+        "unresolved_imports": 3,
+        "sca_status": "SUCCESS",
+        "design_avg_confidence": 0.9111,
+        "design_signature": "ccc9da426c18acb7",
+        "has_baseline": true,
+        "baseline_scan_id": "scan-1-clean",
+        "top_level_packages": 8
+      }
+    },
+    {
+      "phase": "analyze",
+      "detail": {
+        "size_class": "small",
+        "design_changed": false,
+        "changed_packages": [
+          "controllers",
+          "models"
+        ],
+        "change_ratio": 0.25,
+        "ambiguity_ratio": 0.2857,
+        "previous_low_confidence_ratio": 0.0,
+        "data_quality": "good",
+        "ambiguous_components": 2,
+        "expected_components": 7
+      }
+    },
+    {
+      "phase": "plan",
+      "detail": {
+        "scope": "full",
+        "focus_components": [],
+        "matching_rounds": 3,
+        "deep_matching": false,
+        "confidence_threshold": 0.7,
+        "mapping_accept_threshold": 0.75,
+        "review_mode": "local",
+        "review_scope": "all",
+        "llm_budget": 0,
+        "reasons": [
+          "P3: đồ thị nhỏ (79 module, 9 component) -> quét toàn bộ.",
+          "P8: chưa cấu hình LLM -> review bằng RAG + few-shot cục bộ (offline)."
+        ],
+        "source": "agent"
+      }
+    },
+    {
+      "phase": "execute",
+      "detail": {
+        "mapping_status": {
+          "not_applicable": 2,
+          "confirmed": 7
+        },
+        "explicit_mappings": 0,
+        "reused_mappings": 0,
+        "rejected_pairs": 0,
+        "rule_engine": {
+          "explicit_rules": 4,
+          "require_rules": 1,
+          "layers": [
+            "presentation",
+            "composition",
+            "application",
+            "adapters",
+            "domain"
+          ],
+          "default_policy": "design_only",
+          "derived_from_design": true
+        },
+        "findings": 5,
+        "carried_over": 0
+      }
+    },
+    {
+      "phase": "execute",
+      "detail": {
+        "step": "scenario_classification+review",
+        "verdict": "mismatch",
+        "primary_scenario": "junk",
+        "counts": {
+          "match": 18,
+          "wrong": 1,
+          "missing": 0,
+          "junk": 4,
+          "uncertain": 0
+        },
+        "mode": "local",
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "reviewed": 5,
+        "llm_calls": 0,
+        "cache_hits": 0,
+        "fallbacks": 0,
+        "status_changes": 0,
+        "disagreements": 0
+      }
+    },
+    {
+      "phase": "knowledge",
+      "detail": {
+        "persisted": true,
+        "kb_path": "outputs/demo_knowledge.sqlite",
+        "auto_mappings_saved": 7,
+        "findings_saved": 5
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "design_id": "client",
+      "design_name": "API Client",
+      "design_type": "actor",
+      "code_packages": [],
+      "module_count": 0,
+      "confidence": 0.0,
+      "status": "not_applicable",
+      "method": "n/a",
+      "name_score": 0.0,
+      "structure_score": null,
+      "alternatives": [],
+      "reason": "Loại 'actor' mô tả bối cảnh, không kỳ vọng có trong mã nguồn."
+    },
+    {
+      "design_id": "controllers",
+      "design_name": "Controllers",
+      "design_type": "ui",
+      "code_packages": [
+        "controllers"
+      ],
+      "module_count": 24,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "controllers.graphql.trainer",
+          "score": 0.7789
+        },
+        {
+          "code_package": "controllers.rest.trainer",
+          "score": 0.7789
+        },
+        {
+          "code_package": "controllers.graphql",
+          "score": 0.7407
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "usecases",
+      "design_name": "Use Cases",
+      "design_type": "service",
+      "code_packages": [
+        "usecases"
+      ],
+      "module_count": 3,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "usecases.pokemon",
+          "score": 0.7247
+        },
+        {
+          "code_package": "usecases.trainer",
+          "score": 0.7247
+        },
+        {
+          "code_package": "repositories.document_db",
+          "score": 0.5391
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "repositories",
+      "design_name": "Repositories",
+      "design_type": "service",
+      "code_packages": [
+        "repositories"
+      ],
+      "module_count": 32,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "repositories.relational_db",
+          "score": 0.7472
+        },
+        {
+          "code_package": "repositories.document_db",
+          "score": 0.7346
+        },
+        {
+          "code_package": "repositories.key_value_db",
+          "score": 0.7346
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "entities",
+      "design_name": "Domain Entities",
+      "design_type": "service",
+      "code_packages": [
+        "models"
+      ],
+      "module_count": 4,
+      "confidence": 0.853,
+      "status": "confirmed",
+      "method": "synonym+structure",
+      "name_score": 0.6,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "models.trainer",
+          "score": 0.7729
+        },
+        {
+          "code_package": "models.pokemon",
+          "score": 0.7547
+        },
+        {
+          "code_package": "common.type",
+          "score": 0.6347
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "dependency_injection",
+      "design_name": "Dependency Injection",
+      "design_type": "service",
+      "code_packages": [
+        "di"
+      ],
+      "module_count": 3,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "acronym+child+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "di.dependency_injection",
+          "score": 0.9474
+        },
+        {
+          "code_package": "di.unit_of_work",
+          "score": 0.7513
+        },
+        {
+          "code_package": "main",
+          "score": 0.5219
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "settings",
+      "design_name": "Settings",
+      "design_type": "service",
+      "code_packages": [
+        "settings"
+      ],
+      "module_count": 8,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "repositories.abstraction",
+          "score": 0.7962
+        },
+        {
+          "code_package": "repositories.relational_db",
+          "score": 0.7729
+        },
+        {
+          "code_package": "settings.db.mongodb",
+          "score": 0.7479
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "shared",
+      "design_name": "Shared Utilities",
+      "design_type": "service",
+      "code_packages": [
+        "common"
+      ],
+      "module_count": 4,
+      "confidence": 0.853,
+      "status": "confirmed",
+      "method": "synonym+structure",
+      "name_score": 0.6,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "common.type",
+          "score": 0.7407
+        },
+        {
+          "code_package": "models.trainer",
+          "score": 0.6093
+        },
+        {
+          "code_package": "models.exception",
+          "score": 0.5998
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "database",
+      "design_name": "Database",
+      "design_type": "database",
+      "code_packages": [],
+      "module_count": 0,
+      "confidence": 0.0,
+      "status": "not_applicable",
+      "method": "n/a",
+      "name_score": 0.0,
+      "structure_score": null,
+      "alternatives": [],
+      "reason": "Loại 'database' mô tả bối cảnh, không kỳ vọng có trong mã nguồn."
+    }
+  ],
+  "dependencies": [
+    {
+      "source": "controllers",
+      "target": "infrastructure",
+      "reflexion": "divergence",
+      "verdict": "forbidden",
+      "rule_id": "DEFAULT:design_only",
+      "occurrences": 2,
+      "evidence": [
+        {
+          "file_path": "src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 13,
+          "line_end": 13,
+          "statement": "import src.infrastructure.user_repository -> infrastructure.user_repository (unresolved_internal)"
+        },
+        {
+          "file_path": "src/controllers/rest/extension.py",
+          "line_start": 25,
+          "line_end": 25,
+          "statement": "import src.infrastructure.database -> infrastructure.database (unresolved_internal)"
+        }
+      ]
+    },
+    {
+      "source": "controllers",
+      "target": "dependency_injection",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:controllers->dependency_injection",
+      "occurrences": 12,
+      "evidence": [
+        {
+          "file_path": "src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 8,
+          "line_end": 8,
+          "statement": "import di.dependency_injection -> di.dependency_injection (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 9,
+          "line_end": 9,
+          "statement": "import di.unit_of_work -> di.unit_of_work (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/pokemon/query.py",
+          "line_start": 8,
+          "line_end": 8,
+          "statement": "import di.dependency_injection -> di.dependency_injection (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/pokemon/query.py",
+          "line_start": 9,
+          "line_end": 9,
+          "statement": "import di.unit_of_work -> di.unit_of_work (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/trainer/mutation.py",
+          "line_start": 9,
+          "line_end": 9,
+          "statement": "import di.dependency_injection -> di.dependency_injection (internal)"
+        }
+      ]
+    },
+    {
+      "source": "controllers",
+      "target": "entities",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:controllers->entities",
+      "occurrences": 5,
+      "evidence": [
+        {
+          "file_path": "src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 4,
+          "line_end": 10,
+          "statement": "import models.pokemon -> models.pokemon (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/trainer/mapper.py",
+          "line_start": 4,
+          "line_end": 12,
+          "statement": "import models.trainer -> models.trainer (internal)"
+        },
+        {
+          "file_path": "src/controllers/rest/extension.py",
+          "line_start": 15,
+          "line_end": 22,
+          "statement": "import models.exception -> models.exception (internal)"
+        },
+        {
+          "file_path": "src/controllers/rest/pokemon/mapper.py",
+          "line_start": 4,
+          "line_end": 10,
+          "statement": "import models.pokemon -> models.pokemon (internal)"
+        },
+        {
+          "file_path": "src/controllers/rest/trainer/mapper.py",
+          "line_start": 4,
+          "line_end": 12,
+          "statement": "import models.trainer -> models.trainer (internal)"
+        }
+      ]
+    },
+    {
+      "source": "controllers",
+      "target": "shared",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:controllers->shared",
+      "occurrences": 18,
+      "evidence": [
+        {
+          "file_path": "src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import common.docstring -> common.docstring (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 3,
+          "line_end": 3,
+          "statement": "import common.type -> common.type (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 7,
+          "line_end": 7,
+          "statement": "import common.type -> common.type (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/pokemon/query.py",
+          "line_start": 7,
+          "line_end": 7,
+          "statement": "import common.type -> common.type (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/pokemon/schema.py",
+          "line_start": 3,
+          "line_end": 3,
+          "statement": "import common.type -> common.type (internal)"
+        }
+      ]
+    },
+    {
+      "source": "controllers",
+      "target": "usecases",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:controllers->usecases",
+      "occurrences": 6,
+      "evidence": [
+        {
+          "file_path": "src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 6,
+          "line_end": 6,
+          "statement": "import usecases.pokemon -> usecases.pokemon (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/pokemon/query.py",
+          "line_start": 6,
+          "line_end": 6,
+          "statement": "import usecases.pokemon -> usecases.pokemon (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/trainer/mutation.py",
+          "line_start": 7,
+          "line_end": 7,
+          "statement": "import usecases.trainer -> usecases.trainer (internal)"
+        },
+        {
+          "file_path": "src/controllers/graphql/trainer/query.py",
+          "line_start": 6,
+          "line_end": 6,
+          "statement": "import usecases.trainer -> usecases.trainer (internal)"
+        },
+        {
+          "file_path": "src/controllers/rest/pokemon/router.py",
+          "line_start": 6,
+          "line_end": 6,
+          "statement": "import usecases -> usecases (internal)"
+        }
+      ]
+    },
+    {
+      "source": "dependency_injection",
+      "target": "repositories",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:dependency_injection->repositories",
+      "occurrences": 7,
+      "evidence": [
+        {
+          "file_path": "src/di/dependency_injection.py",
+          "line_start": 31,
+          "line_end": 31,
+          "statement": "import repositories.document_db -> repositories.document_db (internal)"
+        },
+        {
+          "file_path": "src/di/dependency_injection.py",
+          "line_start": 32,
+          "line_end": 32,
+          "statement": "import repositories.key_value_db -> repositories.key_value_db (internal)"
+        },
+        {
+          "file_path": "src/di/dependency_injection.py",
+          "line_start": 33,
+          "line_end": 33,
+          "statement": "import repositories.relational_db -> repositories.relational_db (internal)"
+        },
+        {
+          "file_path": "src/di/unit_of_work.py",
+          "line_start": 9,
+          "line_end": 9,
+          "statement": "import repositories.abstraction -> repositories.abstraction (internal)"
+        },
+        {
+          "file_path": "src/di/unit_of_work.py",
+          "line_start": 10,
+          "line_end": 10,
+          "statement": "import repositories.document_db -> repositories.document_db (internal)"
+        }
+      ]
+    },
+    {
+      "source": "dependency_injection",
+      "target": "settings",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:dependency_injection->settings",
+      "occurrences": 7,
+      "evidence": [
+        {
+          "file_path": "src/di/dependency_injection.py",
+          "line_start": 34,
+          "line_end": 34,
+          "statement": "import settings.db -> settings.db (internal)"
+        },
+        {
+          "file_path": "src/di/dependency_injection.py",
+          "line_start": 80,
+          "line_end": 80,
+          "statement": "import settings.db -> settings.db (internal)"
+        },
+        {
+          "file_path": "src/di/dependency_injection.py",
+          "line_start": 108,
+          "line_end": 108,
+          "statement": "import settings.db.mongodb -> settings.db.mongodb (internal)"
+        },
+        {
+          "file_path": "src/di/dependency_injection.py",
+          "line_start": 124,
+          "line_end": 124,
+          "statement": "import settings.db.mongodb -> settings.db.mongodb (internal)"
+        },
+        {
+          "file_path": "src/di/dependency_injection.py",
+          "line_start": 135,
+          "line_end": 135,
+          "statement": "import settings.db.mongodb -> settings.db.mongodb (internal)"
+        }
+      ]
+    },
+    {
+      "source": "entities",
+      "target": "domain",
+      "reflexion": "divergence",
+      "verdict": "forbidden",
+      "rule_id": "DEFAULT:design_only",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "src/models/pokemon.py",
+          "line_start": 8,
+          "line_end": 8,
+          "statement": "import src.domain.order -> domain.order (unresolved_internal)"
+        }
+      ]
+    },
+    {
+      "source": "entities",
+      "target": "shared",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:entities->shared",
+      "occurrences": 2,
+      "evidence": [
+        {
+          "file_path": "src/models/pokemon.py",
+          "line_start": 3,
+          "line_end": 3,
+          "statement": "import common.type -> common.type (internal)"
+        },
+        {
+          "file_path": "src/models/trainer.py",
+          "line_start": 3,
+          "line_end": 3,
+          "statement": "import common.type -> common.type (internal)"
+        }
+      ]
+    },
+    {
+      "source": "repositories",
+      "target": "entities",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:repositories->entities",
+      "occurrences": 20,
+      "evidence": [
+        {
+          "file_path": "src/repositories/abstraction/pokemon.py",
+          "line_start": 6,
+          "line_end": 11,
+          "statement": "import models.pokemon -> models.pokemon (internal)"
+        },
+        {
+          "file_path": "src/repositories/abstraction/trainer.py",
+          "line_start": 6,
+          "line_end": 10,
+          "statement": "import models.trainer -> models.trainer (internal)"
+        },
+        {
+          "file_path": "src/repositories/document_db/pokemon/mapper.py",
+          "line_start": 4,
+          "line_end": 4,
+          "statement": "import models.pokemon -> models.pokemon (internal)"
+        },
+        {
+          "file_path": "src/repositories/document_db/pokemon/repository.py",
+          "line_start": 7,
+          "line_end": 7,
+          "statement": "import models.exception -> models.exception (internal)"
+        },
+        {
+          "file_path": "src/repositories/document_db/pokemon/repository.py",
+          "line_start": 8,
+          "line_end": 13,
+          "statement": "import models.pokemon -> models.pokemon (internal)"
+        }
+      ]
+    },
+    {
+      "source": "repositories",
+      "target": "shared",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:repositories->shared",
+      "occurrences": 20,
+      "evidence": [
+        {
+          "file_path": "src/repositories/abstraction/pokemon.py",
+          "line_start": 5,
+          "line_end": 5,
+          "statement": "import common.type -> common.type (internal)"
+        },
+        {
+          "file_path": "src/repositories/abstraction/trainer.py",
+          "line_start": 5,
+          "line_end": 5,
+          "statement": "import common.type -> common.type (internal)"
+        },
+        {
+          "file_path": "src/repositories/document_db/pokemon/mapper.py",
+          "line_start": 3,
+          "line_end": 3,
+          "statement": "import common.type -> common.type (internal)"
+        },
+        {
+          "file_path": "src/repositories/document_db/pokemon/repository.py",
+          "line_start": 6,
+          "line_end": 6,
+          "statement": "import common.type -> common.type (internal)"
+        },
+        {
+          "file_path": "src/repositories/document_db/trainer/mapper.py",
+          "line_start": 1,
+          "line_end": 1,
+          "statement": "import common.docstring -> common.docstring (internal)"
+        }
+      ]
+    },
+    {
+      "source": "usecases",
+      "target": "dependency_injection",
+      "reflexion": "divergence",
+      "verdict": "forbidden",
+      "rule_id": "LAYER:application->composition",
+      "occurrences": 2,
+      "evidence": [
+        {
+          "file_path": "src/usecases/pokemon.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import di.unit_of_work -> di.unit_of_work (internal)"
+        },
+        {
+          "file_path": "src/usecases/trainer.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import di.unit_of_work -> di.unit_of_work (internal)"
+        }
+      ]
+    },
+    {
+      "source": "usecases",
+      "target": "entities",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:usecases->entities",
+      "occurrences": 4,
+      "evidence": [
+        {
+          "file_path": "src/usecases/pokemon.py",
+          "line_start": 3,
+          "line_end": 3,
+          "statement": "import models.exception -> models.exception (internal)"
+        },
+        {
+          "file_path": "src/usecases/pokemon.py",
+          "line_start": 4,
+          "line_end": 4,
+          "statement": "import models.pokemon -> models.pokemon (internal)"
+        },
+        {
+          "file_path": "src/usecases/trainer.py",
+          "line_start": 3,
+          "line_end": 7,
+          "statement": "import models.exception -> models.exception (internal)"
+        },
+        {
+          "file_path": "src/usecases/trainer.py",
+          "line_start": 8,
+          "line_end": 15,
+          "statement": "import models.trainer -> models.trainer (internal)"
+        }
+      ]
+    },
+    {
+      "source": "usecases",
+      "target": "shared",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:usecases->shared",
+      "occurrences": 2,
+      "evidence": [
+        {
+          "file_path": "src/usecases/pokemon.py",
+          "line_start": 1,
+          "line_end": 1,
+          "statement": "import common.type -> common.type (internal)"
+        },
+        {
+          "file_path": "src/usecases/trainer.py",
+          "line_start": 1,
+          "line_end": 1,
+          "statement": "import common.type -> common.type (internal)"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "CCA-0001",
+      "fingerprint": "3a0657e14c8829a7",
+      "violation_type": "layer_violation",
+      "severity": "high",
+      "confidence_score": 0.8392,
+      "confidence_breakdown": {
+        "mapping": 0.955,
+        "rule_clarity": 0.95,
+        "evidence": 1.0,
+        "data_completeness": 0.925,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "confirmed",
+      "detected_by": "rule_engine",
+      "rule_id": "LAYER:application->composition",
+      "description": "Layer 'application' (trong) phụ thuộc ngược lên layer 'composition' (ngoài): usecases -> dependency_injection. (2 lần import)",
+      "source_component": "usecases",
+      "target_component": "dependency_injection",
+      "expected_dependency": "application chỉ được phụ thuộc các layer bên trong",
+      "actual_dependency": "usecases -> dependency_injection",
+      "file_path": "src/usecases/pokemon.py",
+      "line_number": 2,
+      "evidence": [
+        {
+          "file_path": "src/usecases/pokemon.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import di.unit_of_work -> di.unit_of_work (internal)"
+        },
+        {
+          "file_path": "src/usecases/trainer.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import di.unit_of_work -> di.unit_of_work (internal)"
+        }
+      ],
+      "recommended_action": "Đảo chiều phụ thuộc: định nghĩa interface ở layer trong (usecases) và để layer ngoài (dependency_injection) hiện thực nó (Dependency Inversion).",
+      "carried_over": false,
+      "scenario": "wrong",
+      "scenario_detail": "layer_violation",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "wrong",
+        "confidence": 1.0,
+        "rationale": "Gần nhất với ví dụ fs-wrong-4 (confirm): Use case chỉ cần abstraction nhưng abstraction lại đặt trong module DI chứa driver cụ thể, nên vẫn kéo phụ thuộc ra layer ngoài. Tài liệu liên quan: [design:dependency_injection] Thiết kế: Dependency Injection; [rule:layer:composition] Layer composition.",
+        "suggested_fix": "Chuyển AbstractUnitOfWork vào layer application; DI chỉ hiện thực và lắp ráp.",
+        "retrieved_docs": [
+          "design:dependency_injection",
+          "rule:layer:composition",
+          "rule:layer:application",
+          "design:usecases"
+        ],
+        "cited_docs": [
+          "design:dependency_injection",
+          "rule:layer:composition"
+        ],
+        "few_shot_ids": [
+          "fs-wrong-4",
+          "fs-wrong-2",
+          "fs-junk-7"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    },
+    {
+      "finding_id": "CCA-0002",
+      "fingerprint": "07fecb1f71c8fd73",
+      "violation_type": "unexpected_component",
+      "severity": "high",
+      "confidence_score": 0.81,
+      "confidence_breakdown": {
+        "mapping": 0.9,
+        "rule_clarity": 0.9,
+        "evidence": 1.0,
+        "data_completeness": 1.0,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "confirmed",
+      "detected_by": "graph_matching",
+      "rule_id": "DESIGN:component-set",
+      "description": "Package 'domain' được import nhưng KHÔNG tồn tại trong mã nguồn (package ma), cũng không có trong kiến trúc.",
+      "source_component": "domain",
+      "target_component": "",
+      "expected_dependency": "(không có trong thiết kế)",
+      "actual_dependency": "domain tồn tại trong code",
+      "file_path": "src/models/pokemon.py",
+      "line_number": 8,
+      "evidence": [
+        {
+          "file_path": "src/models/pokemon.py",
+          "line_start": 8,
+          "line_end": 8,
+          "statement": "import src.domain.order -> domain.order (unresolved_internal)"
+        }
+      ],
+      "recommended_action": "Bổ sung 'domain' vào tài liệu kiến trúc (nếu là component hợp lệ) hoặc gộp vào component phù hợp; nếu là import tới package không tồn tại, sửa import.",
+      "carried_over": false,
+      "scenario": "junk",
+      "scenario_detail": "phantom",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "junk",
+        "confidence": 0.753,
+        "rationale": "Gần nhất với ví dụ fs-junk-2 (confirm): Import tới module không tồn tại sẽ gây ImportError; đây là dấu vết refactor còn sót. Tài liệu liên quan: [scenarios#kich-ban-4-code-rac-thiet-ke-khong-co] Bốn kịch bản đối chiếu kiến trúc và mã nguồn - Kịch bản 4 - code rác, thiết kế không có; [scenarios#kich-ban-2-code-sai-so-voi-thiet-ke] Bốn kịch bản đối chiếu kiến trúc và mã nguồn - Kịch bản 2 - code sai so với thiết kế.",
+        "suggested_fix": "Sửa đường dẫn import hoặc xóa import.",
+        "retrieved_docs": [
+          "scenarios#kich-ban-4-code-rac-thiet-ke-khong-co",
+          "scenarios#kich-ban-2-code-sai-so-voi-thiet-ke",
+          "design:entities",
+          "scenarios#kich-ban-1-khop-hoan-toan"
+        ],
+        "cited_docs": [
+          "scenarios#kich-ban-4-code-rac-thiet-ke-khong-co",
+          "scenarios#kich-ban-2-code-sai-so-voi-thiet-ke"
+        ],
+        "few_shot_ids": [
+          "fs-junk-2",
+          "fs-junk-1",
+          "fs-junk-3"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    },
+    {
+      "finding_id": "CCA-0003",
+      "fingerprint": "b0f0290e7a0bef1d",
+      "violation_type": "unexpected_component",
+      "severity": "high",
+      "confidence_score": 0.81,
+      "confidence_breakdown": {
+        "mapping": 0.9,
+        "rule_clarity": 0.9,
+        "evidence": 1.0,
+        "data_completeness": 1.0,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "confirmed",
+      "detected_by": "graph_matching",
+      "rule_id": "DESIGN:component-set",
+      "description": "Package 'infrastructure' được import nhưng KHÔNG tồn tại trong mã nguồn (package ma), cũng không có trong kiến trúc.",
+      "source_component": "infrastructure",
+      "target_component": "",
+      "expected_dependency": "(không có trong thiết kế)",
+      "actual_dependency": "infrastructure tồn tại trong code",
+      "file_path": "src/controllers/graphql/pokemon/mapper.py",
+      "line_number": 13,
+      "evidence": [
+        {
+          "file_path": "src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 13,
+          "line_end": 13,
+          "statement": "import src.infrastructure.user_repository -> infrastructure.user_repository (unresolved_internal)"
+        },
+        {
+          "file_path": "src/controllers/rest/extension.py",
+          "line_start": 25,
+          "line_end": 25,
+          "statement": "import src.infrastructure.database -> infrastructure.database (unresolved_internal)"
+        }
+      ],
+      "recommended_action": "Bổ sung 'infrastructure' vào tài liệu kiến trúc (nếu là component hợp lệ) hoặc gộp vào component phù hợp; nếu là import tới package không tồn tại, sửa import.",
+      "carried_over": false,
+      "scenario": "junk",
+      "scenario_detail": "phantom",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "junk",
+        "confidence": 0.7676,
+        "rationale": "Gần nhất với ví dụ fs-junk-2 (confirm): Import tới module không tồn tại sẽ gây ImportError; đây là dấu vết refactor còn sót. Tài liệu liên quan: [scenarios#kich-ban-4-code-rac-thiet-ke-khong-co] Bốn kịch bản đối chiếu kiến trúc và mã nguồn - Kịch bản 4 - code rác, thiết kế không có; [layered_architecture#phan-lop-chat-va-long] Kiến trúc phân lớp - Phân lớp chặt và lỏng.",
+        "suggested_fix": "Sửa đường dẫn import hoặc xóa import.",
+        "retrieved_docs": [
+          "scenarios#kich-ban-4-code-rac-thiet-ke-khong-co",
+          "layered_architecture#phan-lop-chat-va-long",
+          "remediation#xu-ly-code-rac",
+          "scenarios#kich-ban-2-code-sai-so-voi-thiet-ke"
+        ],
+        "cited_docs": [
+          "scenarios#kich-ban-4-code-rac-thiet-ke-khong-co",
+          "layered_architecture#phan-lop-chat-va-long"
+        ],
+        "few_shot_ids": [
+          "fs-junk-2",
+          "fs-junk-1",
+          "fs-junk-3"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    },
+    {
+      "finding_id": "CCA-0004",
+      "fingerprint": "67ceac228c138350",
+      "violation_type": "unexpected_dependency",
+      "severity": "medium",
+      "confidence_score": 0.4724,
+      "confidence_breakdown": {
+        "mapping": 0.9,
+        "rule_clarity": 0.65,
+        "evidence": 0.85,
+        "data_completeness": 0.95,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "needs_review",
+      "detected_by": "rule_engine",
+      "rule_id": "DEFAULT:design_only",
+      "description": "Phụ thuộc controllers -> infrastructure không có trong kiến trúc thiết kế. (2 lần import)",
+      "source_component": "controllers",
+      "target_component": "infrastructure",
+      "expected_dependency": "(không có trong thiết kế)",
+      "actual_dependency": "controllers -> infrastructure",
+      "file_path": "src/controllers/graphql/pokemon/mapper.py",
+      "line_number": 13,
+      "evidence": [
+        {
+          "file_path": "src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 13,
+          "line_end": 13,
+          "statement": "import src.infrastructure.user_repository -> infrastructure.user_repository (unresolved_internal)"
+        },
+        {
+          "file_path": "src/controllers/rest/extension.py",
+          "line_start": 25,
+          "line_end": 25,
+          "statement": "import src.infrastructure.database -> infrastructure.database (unresolved_internal)"
+        }
+      ],
+      "recommended_action": "Xác nhận phụ thuộc controllers -> infrastructure: nếu có chủ đích, cập nhật tài liệu kiến trúc / thêm luật allow; nếu không, gỡ bỏ.",
+      "carried_over": false,
+      "scenario": "junk",
+      "scenario_detail": "dependency_to_junk",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "junk",
+        "confidence": 1.0,
+        "rationale": "Gần nhất với ví dụ fs-junk-5 (confirm): Phụ thuộc trỏ tới package không tồn tại: là một phần của code rác, sẽ lỗi khi chạy. Tài liệu liên quan: [layered_architecture#phan-lop-chat-va-long] Kiến trúc phân lớp - Phân lớp chặt và lỏng; [design:database] Thiết kế: Database.",
+        "suggested_fix": "Xóa hoặc sửa import tới module không tồn tại.",
+        "retrieved_docs": [
+          "layered_architecture#phan-lop-chat-va-long",
+          "design:database",
+          "scenarios#kich-ban-4-code-rac-thiet-ke-khong-co",
+          "scenarios#kich-ban-2-code-sai-so-voi-thiet-ke"
+        ],
+        "cited_docs": [
+          "layered_architecture#phan-lop-chat-va-long",
+          "design:database"
+        ],
+        "few_shot_ids": [
+          "fs-junk-5",
+          "fs-junk-7",
+          "fs-junk-6"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    },
+    {
+      "finding_id": "CCA-0005",
+      "fingerprint": "f49a98594473eb0f",
+      "violation_type": "unexpected_dependency",
+      "severity": "medium",
+      "confidence_score": 0.4242,
+      "confidence_breakdown": {
+        "mapping": 0.853,
+        "rule_clarity": 0.65,
+        "evidence": 0.85,
+        "data_completeness": 0.9,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "needs_review",
+      "detected_by": "rule_engine",
+      "rule_id": "DEFAULT:design_only",
+      "description": "Phụ thuộc entities -> domain không có trong kiến trúc thiết kế. (1 lần import)",
+      "source_component": "entities",
+      "target_component": "domain",
+      "expected_dependency": "(không có trong thiết kế)",
+      "actual_dependency": "entities -> domain",
+      "file_path": "src/models/pokemon.py",
+      "line_number": 8,
+      "evidence": [
+        {
+          "file_path": "src/models/pokemon.py",
+          "line_start": 8,
+          "line_end": 8,
+          "statement": "import src.domain.order -> domain.order (unresolved_internal)"
+        }
+      ],
+      "recommended_action": "Xác nhận phụ thuộc entities -> domain: nếu có chủ đích, cập nhật tài liệu kiến trúc / thêm luật allow; nếu không, gỡ bỏ.",
+      "carried_over": false,
+      "scenario": "junk",
+      "scenario_detail": "dependency_to_junk",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "junk",
+        "confidence": 1.0,
+        "rationale": "Gần nhất với ví dụ fs-junk-5 (confirm): Phụ thuộc trỏ tới package không tồn tại: là một phần của code rác, sẽ lỗi khi chạy. Tài liệu liên quan: [design:entities] Thiết kế: Domain Entities; [rule:R2] Luật R2 (forbid).",
+        "suggested_fix": "Xóa hoặc sửa import tới module không tồn tại.",
+        "retrieved_docs": [
+          "design:entities",
+          "rule:R2",
+          "rule:R4",
+          "rule:layer:domain"
+        ],
+        "cited_docs": [
+          "design:entities",
+          "rule:R2"
+        ],
+        "few_shot_ids": [
+          "fs-junk-5",
+          "fs-junk-7",
+          "fs-junk-6"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    }
+  ],
+  "drift": {
+    "design_components": 7,
+    "actual_components": 9,
+    "matched_components": 7,
+    "design_dependencies": 11,
+    "actual_dependencies": 14,
+    "convergences": 11,
+    "divergences": 3,
+    "absences": 0,
+    "component_coverage": 1.0,
+    "dependency_conformance": 0.7857,
+    "dependency_realization": 1.0,
+    "structural_similarity": 0.7826,
+    "drift_score": 0.2174,
+    "violation_index": 0.0997,
+    "drift_level": "moderate",
+    "previous_drift_score": 0.0526,
+    "drift_trend": "worsening",
+    "changed_relations": {
+      "added_dependencies": [
+        "controllers -> code:infrastructure",
+        "entities -> code:domain",
+        "usecases -> dependency_injection"
+      ],
+      "removed_dependencies": [],
+      "added_components": [
+        "code:domain",
+        "code:infrastructure"
+      ],
+      "missing_components": [],
+      "new_since_last_scan": [
+        "controllers -> code:infrastructure",
+        "entities -> code:domain"
+      ],
+      "gone_since_last_scan": []
+    }
+  },
+  "scenario_report": {
+    "verdict": "mismatch",
+    "primary_scenario": "junk",
+    "scenarios_present": [
+      "match",
+      "wrong",
+      "junk"
+    ],
+    "counts": {
+      "match": 18,
+      "wrong": 1,
+      "missing": 0,
+      "junk": 4,
+      "uncertain": 0
+    },
+    "match": [
+      {
+        "kind": "component",
+        "source": "controllers",
+        "target": "controllers",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "usecases",
+        "target": "usecases",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "repositories",
+        "target": "repositories",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "entities",
+        "target": "models",
+        "detail": "synonym+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "dependency_injection",
+        "target": "di",
+        "detail": "acronym+child+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "settings",
+        "target": "settings",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "shared",
+        "target": "common",
+        "detail": "synonym+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "controllers",
+        "target": "dependency_injection",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "controllers",
+        "target": "entities",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "controllers",
+        "target": "shared",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "controllers",
+        "target": "usecases",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "dependency_injection",
+        "target": "repositories",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "dependency_injection",
+        "target": "settings",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "entities",
+        "target": "shared",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "repositories",
+        "target": "entities",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "repositories",
+        "target": "shared",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "usecases",
+        "target": "entities",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "usecases",
+        "target": "shared",
+        "detail": "convergence",
+        "finding_ids": []
+      }
+    ],
+    "wrong": [
+      {
+        "kind": "dependency",
+        "source": "usecases",
+        "target": "dependency_injection",
+        "detail": "layer_violation",
+        "finding_ids": [
+          "CCA-0001"
+        ]
+      }
+    ],
+    "missing": [],
+    "junk": [
+      {
+        "kind": "component",
+        "source": "domain",
+        "target": "",
+        "detail": "phantom",
+        "finding_ids": [
+          "CCA-0002"
+        ]
+      },
+      {
+        "kind": "component",
+        "source": "infrastructure",
+        "target": "",
+        "detail": "phantom",
+        "finding_ids": [
+          "CCA-0003"
+        ]
+      },
+      {
+        "kind": "dependency",
+        "source": "controllers",
+        "target": "infrastructure",
+        "detail": "dependency_to_junk",
+        "finding_ids": [
+          "CCA-0004"
+        ]
+      },
+      {
+        "kind": "dependency",
+        "source": "entities",
+        "target": "domain",
+        "detail": "dependency_to_junk",
+        "finding_ids": [
+          "CCA-0005"
+        ]
+      }
+    ],
+    "uncertain": [],
+    "match_ratio": 0.7826,
+    "summary": "Kết luận: KHÔNG khớp; kịch bản chính: code rác (thiết kế không có). Tỷ lệ khớp 78% (18 phần tử khớp). Code sai so với thiết kế (1): usecases -> dependency_injection. Code rác/ngoài kiến trúc (4): domain (phantom), infrastructure (phantom), controllers -> infrastructure và 1 mục khác.",
+    "summary_by": "template"
+  },
+  "review": {
+    "mode": "local",
+    "provider": "local-fewshot",
+    "model": "knn-fewshot-v1",
+    "policy": "advisory",
+    "reviewed": 5,
+    "llm_calls": 0,
+    "cache_hits": 0,
+    "fallbacks": 0,
+    "local_fallback_reviews": 0,
+    "status_changes": 0,
+    "disagreements": 0,
+    "rag_documents": 40,
+    "few_shot_pool": 19,
+    "errors": []
+  },
+  "statistics": {
+    "total_findings": 5,
+    "open_violations": 5,
+    "by_type": {
+      "layer_violation": 1,
+      "unexpected_component": 2,
+      "unexpected_dependency": 2
+    },
+    "by_severity": {
+      "high": 3,
+      "medium": 2
+    },
+    "by_status": {
+      "confirmed": 3,
+      "needs_review": 2
+    },
+    "valid_dependencies": 11,
+    "invalid_dependencies": 3,
+    "undetermined_dependencies": 0
+  },
+  "visualization": {
+    "nodes": [
+      {
+        "id": "client",
+        "label": "API Client",
+        "kind": "design",
+        "status": "context",
+        "layer": null
+      },
+      {
+        "id": "controllers",
+        "label": "Controllers",
+        "kind": "design",
+        "status": "matched",
+        "layer": "presentation"
+      },
+      {
+        "id": "usecases",
+        "label": "Use Cases",
+        "kind": "design",
+        "status": "matched",
+        "layer": "application"
+      },
+      {
+        "id": "repositories",
+        "label": "Repositories",
+        "kind": "design",
+        "status": "matched",
+        "layer": "adapters"
+      },
+      {
+        "id": "entities",
+        "label": "Domain Entities",
+        "kind": "design",
+        "status": "matched",
+        "layer": "domain"
+      },
+      {
+        "id": "dependency_injection",
+        "label": "Dependency Injection",
+        "kind": "design",
+        "status": "matched",
+        "layer": "composition"
+      },
+      {
+        "id": "settings",
+        "label": "Settings",
+        "kind": "design",
+        "status": "matched",
+        "layer": "composition"
+      },
+      {
+        "id": "shared",
+        "label": "Shared Utilities",
+        "kind": "design",
+        "status": "matched",
+        "layer": null
+      },
+      {
+        "id": "database",
+        "label": "Database",
+        "kind": "design",
+        "status": "context",
+        "layer": null
+      },
+      {
+        "id": "code:domain",
+        "label": "domain",
+        "kind": "phantom",
+        "status": "unexpected",
+        "layer": null
+      },
+      {
+        "id": "code:infrastructure",
+        "label": "infrastructure",
+        "kind": "phantom",
+        "status": "unexpected",
+        "layer": null
+      }
+    ],
+    "edges": [
+      {
+        "source": "controllers",
+        "target": "code:infrastructure",
+        "reflexion": "divergence",
+        "verdict": "forbidden",
+        "weight": 2
+      },
+      {
+        "source": "controllers",
+        "target": "dependency_injection",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 12
+      },
+      {
+        "source": "controllers",
+        "target": "entities",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 5
+      },
+      {
+        "source": "controllers",
+        "target": "shared",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 18
+      },
+      {
+        "source": "controllers",
+        "target": "usecases",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 6
+      },
+      {
+        "source": "dependency_injection",
+        "target": "repositories",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 7
+      },
+      {
+        "source": "dependency_injection",
+        "target": "settings",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 7
+      },
+      {
+        "source": "entities",
+        "target": "code:domain",
+        "reflexion": "divergence",
+        "verdict": "forbidden",
+        "weight": 1
+      },
+      {
+        "source": "entities",
+        "target": "shared",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 2
+      },
+      {
+        "source": "repositories",
+        "target": "entities",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 20
+      },
+      {
+        "source": "repositories",
+        "target": "shared",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 20
+      },
+      {
+        "source": "usecases",
+        "target": "dependency_injection",
+        "reflexion": "divergence",
+        "verdict": "forbidden",
+        "weight": 2
+      },
+      {
+        "source": "usecases",
+        "target": "entities",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 4
+      },
+      {
+        "source": "usecases",
+        "target": "shared",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 2
+      }
+    ]
+  },
+  "performance": {
+    "total_ms": 79.596,
+    "phase_ms": {
+      "normalize": 5.161,
+      "monitor": 0.571,
+      "analyze": 2.72,
+      "plan": 0.047,
+      "graph_matching": 61.771,
+      "rule_engine_and_drift": 1.728,
+      "execute": 63.931,
+      "review": 5.07,
+      "knowledge": 2.096
+    },
+    "design_nodes": 9,
+    "design_edges": 13,
+    "code_modules": 79,
+    "code_dependencies": 284,
+    "internal_dependencies": 189,
+    "unresolved_imports": 3,
+    "llm_calls": 0
+  },
+  "warnings": [
+    "Sinh bởi consistency_agent.tools.sca_fallback (ast), không phải SCA tree-sitter."
+  ],
+  "errors": []
+}

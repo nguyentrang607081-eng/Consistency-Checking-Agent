@@ -1,1 +1,0 @@
-"""Consistency rule checkers."""

@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "py-clean-arch",
+  "run_id": "scan-2-faulty",
+  "project_name": "py-clean-arch",
+  "confidence_threshold": 0.7,
+  "architecture_rules": [
+    {
+      "rule_id": "LAYER:application->composition",
+      "source_layer": "application",
+      "target_layer": "composition",
+      "status": "FORBIDDEN",
+      "description": "Layer 'application' (trong) phụ thuộc ngược lên layer 'composition' (ngoài): usecases -> dependency_injection. (2 lần import)"
+    }
+  ],
+  "issues": [
+    {
+      "issue_id": "CCA-0001",
+      "status": "VIOLATION",
+      "source_module": "usecases",
+      "target_module": "dependency_injection",
+      "source_layer": "application",
+      "target_layer": "composition",
+      "dependency_type": "layer_violation",
+      "rule_id": "LAYER:application->composition",
+      "rule_description": "Layer 'application' (trong) phụ thuộc ngược lên layer 'composition' (ngoài): usecases -> dependency_injection. (2 lần import)",
+      "rule_status": "FORBIDDEN",
+      "confidence": 0.8392,
+      "severity": "HIGH",
+      "evidence": [
+        {
+          "file_path": "src/usecases/pokemon.py",
+          "line_start": 2,
+          "line_end": 2,
+          "description": "import di.unit_of_work -> di.unit_of_work (internal)"
+        },
+        {
+          "file_path": "src/usecases/trainer.py",
+          "line_start": 2,
+          "line_end": 2,
+          "description": "import di.unit_of_work -> di.unit_of_work (internal)"
+        }
+      ],
+      "unresolved_items": []
+    },
+    {
+      "issue_id": "CCA-0002",
+      "status": "VIOLATION",
+      "source_module": "domain",
+      "target_module": "-",
+      "source_layer": null,
+      "target_layer": null,
+      "dependency_type": "unexpected_component",
+      "rule_id": null,
+      "rule_description": null,
+      "rule_status": "NOT_SPECIFIED",
+      "confidence": 0.81,
+      "severity": "HIGH",
+      "evidence": [
+        {
+          "file_path": "src/models/pokemon.py",
+          "line_start": 8,
+          "line_end": 8,
+          "description": "import src.domain.order -> domain.order (unresolved_internal)"
+        }
+      ],
+      "unresolved_items": []
+    },
+    {
+      "issue_id": "CCA-0003",
+      "status": "VIOLATION",
+      "source_module": "infrastructure",
+      "target_module": "-",
+      "source_layer": null,
+      "target_layer": null,
+      "dependency_type": "unexpected_component",
+      "rule_id": null,
+      "rule_description": null,
+      "rule_status": "NOT_SPECIFIED",
+      "confidence": 0.81,
+      "severity": "HIGH",
+      "evidence": [
+        {
+          "file_path": "src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 13,
+          "line_end": 13,
+          "description": "import src.infrastructure.user_repository -> infrastructure.user_repository (unresolved_internal)"
+        },
+        {
+          "file_path": "src/controllers/rest/extension.py",
+          "line_start": 25,
+          "line_end": 25,
+          "description": "import src.infrastructure.database -> infrastructure.database (unresolved_internal)"
+        }
+      ],
+      "unresolved_items": []
+    },
+    {
+      "issue_id": "CCA-0004",
+      "status": "REVIEW",
+      "source_module": "controllers",
+      "target_module": "infrastructure",
+      "source_layer": "presentation",
+      "target_layer": null,
+      "dependency_type": "unexpected_dependency",
+      "rule_id": null,
+      "rule_description": null,
+      "rule_status": "NOT_SPECIFIED",
+      "confidence": 0.4724,
+      "severity": "MEDIUM",
+      "evidence": [
+        {
+          "file_path": "src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 13,
+          "line_end": 13,
+          "description": "import src.infrastructure.user_repository -> infrastructure.user_repository (unresolved_internal)"
+        },
+        {
+          "file_path": "src/controllers/rest/extension.py",
+          "line_start": 25,
+          "line_end": 25,
+          "description": "import src.infrastructure.database -> infrastructure.database (unresolved_internal)"
+        }
+      ],
+      "unresolved_items": [
+        "Xác nhận finding 67ceac228c138350"
+      ]
+    },
+    {
+      "issue_id": "CCA-0005",
+      "status": "REVIEW",
+      "source_module": "entities",
+      "target_module": "domain",
+      "source_layer": "domain",
+      "target_layer": null,
+      "dependency_type": "unexpected_dependency",
+      "rule_id": null,
+      "rule_description": null,
+      "rule_status": "NOT_SPECIFIED",
+      "confidence": 0.4242,
+      "severity": "MEDIUM",
+      "evidence": [
+        {
+          "file_path": "src/models/pokemon.py",
+          "line_start": 8,
+          "line_end": 8,
+          "description": "import src.domain.order -> domain.order (unresolved_internal)"
+        }
+      ],
+      "unresolved_items": [
+        "Xác nhận finding f49a98594473eb0f"
+      ]
+    }
+  ]
+}

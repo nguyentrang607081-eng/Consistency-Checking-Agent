@@ -1,0 +1,6 @@
+{
+  "1_match":   {"verdict": "match",    "primary_scenario": "match"},
+  "2_wrong":   {"verdict": "mismatch", "primary_scenario": "wrong"},
+  "3_missing": {"verdict": "mismatch", "primary_scenario": "missing"},
+  "4_junk":    {"verdict": "mismatch", "primary_scenario": "junk"}
+}

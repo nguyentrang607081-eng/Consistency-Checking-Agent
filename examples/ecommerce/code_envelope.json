@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "project_id": "ecommerce-demo",
+  "run_id": "scan-ecommerce-1",
+  "agent_name": "Source Code Analysis",
+  "status": "SUCCESS",
+  "confidence": 0.95,
+  "evidence": [
+    "src/analytics/__init__.py",
+    "src/analytics/report.py",
+    "src/gateway/__init__.py",
+    "src/gateway/client.py",
+    "src/notify/__init__.py",
+    "src/notify/sender.py",
+    "src/orders/__init__.py",
+    "src/orders/repository.py",
+    "src/orders/service.py",
+    "src/webapp/__init__.py",
+    "src/webapp/views.py"
+  ],
+  "payload": {
+    "dependencies": [
+      {
+        "from_module": "report",
+        "to_module": "orders.repository",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/analytics/report.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "client",
+        "to_module": "orders.service",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/gateway/client.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "sender",
+        "to_module": "smtplib",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/notify/sender.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "sender",
+        "to_module": "orders.service",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/notify/sender.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "sqlite3",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/orders/repository.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "service",
+        "to_module": "notify.sender",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/orders/service.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "service",
+        "to_module": ".repository",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/orders/service.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "views",
+        "to_module": "gateway.client",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/webapp/views.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "views",
+        "to_module": "orders.repository",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/webapp/views.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      }
+    ]
+  },
+  "warnings": [
+    "Sinh bởi consistency_agent.tools.sca_fallback (ast), không phải SCA tree-sitter."
+  ],
+  "errors": []
+}

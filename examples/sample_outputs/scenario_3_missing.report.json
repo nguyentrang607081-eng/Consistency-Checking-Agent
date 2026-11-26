@@ -1,0 +1,739 @@
+{
+  "schema_version": "1.0.0",
+  "agent_name": "Consistency Checking Agent",
+  "project_id": "library-3_missing",
+  "scan_id": "scan-3_missing",
+  "commit_hash": "",
+  "generated_at": "2026-11-26T17:31:55+00:00",
+  "status": "SUCCESS",
+  "strategy": {
+    "scope": "full",
+    "focus_components": [],
+    "matching_rounds": 3,
+    "deep_matching": false,
+    "confidence_threshold": 0.7,
+    "mapping_accept_threshold": 0.75,
+    "review_mode": "local",
+    "review_scope": "all",
+    "llm_budget": 0,
+    "reasons": [
+      "P2: chưa có lần quét trước trong Knowledge -> quét toàn bộ.",
+      "P8: chưa cấu hình LLM -> review bằng RAG + few-shot cục bộ (offline)."
+    ],
+    "source": "agent"
+  },
+  "adaptation_trace": [
+    {
+      "phase": "monitor",
+      "detail": {
+        "design_components": 7,
+        "design_edges": 7,
+        "code_modules": 8,
+        "code_dependencies": 5,
+        "internal_dependencies": 3,
+        "unresolved_imports": 0,
+        "sca_status": "SUCCESS",
+        "design_avg_confidence": 0.9857,
+        "design_signature": "553992322a49681b",
+        "has_baseline": false,
+        "baseline_scan_id": null,
+        "top_level_packages": 4
+      }
+    },
+    {
+      "phase": "analyze",
+      "detail": {
+        "size_class": "small",
+        "design_changed": false,
+        "changed_packages": [],
+        "change_ratio": 0.0,
+        "ambiguity_ratio": 0.2,
+        "previous_low_confidence_ratio": 0.0,
+        "data_quality": "good",
+        "ambiguous_components": 1,
+        "expected_components": 5
+      }
+    },
+    {
+      "phase": "plan",
+      "detail": {
+        "scope": "full",
+        "focus_components": [],
+        "matching_rounds": 3,
+        "deep_matching": false,
+        "confidence_threshold": 0.7,
+        "mapping_accept_threshold": 0.75,
+        "review_mode": "local",
+        "review_scope": "all",
+        "llm_budget": 0,
+        "reasons": [
+          "P2: chưa có lần quét trước trong Knowledge -> quét toàn bộ.",
+          "P8: chưa cấu hình LLM -> review bằng RAG + few-shot cục bộ (offline)."
+        ],
+        "source": "agent"
+      }
+    },
+    {
+      "phase": "execute",
+      "detail": {
+        "mapping_status": {
+          "not_applicable": 2,
+          "confirmed": 4,
+          "unmapped": 1
+        },
+        "explicit_mappings": 0,
+        "reused_mappings": 0,
+        "rejected_pairs": 0,
+        "rule_engine": {
+          "explicit_rules": 1,
+          "require_rules": 0,
+          "layers": [
+            "presentation",
+            "application",
+            "infrastructure",
+            "domain"
+          ],
+          "default_policy": "design_only",
+          "derived_from_design": true
+        },
+        "findings": 2,
+        "carried_over": 0
+      }
+    },
+    {
+      "phase": "execute",
+      "detail": {
+        "step": "scenario_classification+review",
+        "verdict": "mismatch",
+        "primary_scenario": "missing",
+        "counts": {
+          "match": 7,
+          "wrong": 0,
+          "missing": 2,
+          "junk": 0,
+          "uncertain": 0
+        },
+        "mode": "local",
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "reviewed": 2,
+        "llm_calls": 0,
+        "cache_hits": 0,
+        "fallbacks": 0,
+        "status_changes": 0,
+        "disagreements": 0
+      }
+    },
+    {
+      "phase": "knowledge",
+      "detail": {
+        "persisted": false,
+        "reason": "Knowledge bị tắt"
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "design_id": "reader",
+      "design_name": "Bạn đọc",
+      "design_type": "actor",
+      "code_packages": [],
+      "module_count": 0,
+      "confidence": 0.0,
+      "status": "not_applicable",
+      "method": "n/a",
+      "name_score": 0.0,
+      "structure_score": null,
+      "alternatives": [],
+      "reason": "Loại 'actor' mô tả bối cảnh, không kỳ vọng có trong mã nguồn."
+    },
+    {
+      "design_id": "api",
+      "design_name": "API",
+      "design_type": "ui",
+      "code_packages": [
+        "api"
+      ],
+      "module_count": 2,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "api.routes",
+          "score": 0.7
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "services",
+      "design_name": "Services",
+      "design_type": "service",
+      "code_packages": [
+        "services"
+      ],
+      "module_count": 2,
+      "confidence": 0.92,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 0.6667,
+      "alternatives": [
+        {
+          "code_package": "services.loan_service",
+          "score": 0.7061
+        },
+        {
+          "code_package": "repositories",
+          "score": 0.3406
+        },
+        {
+          "code_package": "repositories.book_repo",
+          "score": 0.2923
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "repositories",
+      "design_name": "Repositories",
+      "design_type": "service",
+      "code_packages": [
+        "repositories"
+      ],
+      "module_count": 2,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "repositories.book_repo",
+          "score": 0.8484
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "notifications",
+      "design_name": "Notifications",
+      "design_type": "service",
+      "code_packages": [],
+      "module_count": 0,
+      "confidence": 0.0,
+      "status": "unmapped",
+      "method": "none",
+      "name_score": 0.0,
+      "structure_score": null,
+      "alternatives": [
+        {
+          "code_package": "repositories",
+          "score": 0.7487
+        },
+        {
+          "code_package": "repositories.book_repo",
+          "score": 0.7346
+        }
+      ],
+      "reason": "Không có package nào đủ điểm tên hoặc cấu trúc."
+    },
+    {
+      "design_id": "models",
+      "design_name": "Models",
+      "design_type": "service",
+      "code_packages": [
+        "models"
+      ],
+      "module_count": 2,
+      "confidence": 0.9025,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 0.5,
+      "alternatives": [
+        {
+          "code_package": "repositories.book_repo",
+          "score": 0.4654
+        },
+        {
+          "code_package": "models.book",
+          "score": 0.4334
+        },
+        {
+          "code_package": "repositories",
+          "score": 0.4015
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "database",
+      "design_name": "Database",
+      "design_type": "database",
+      "code_packages": [],
+      "module_count": 0,
+      "confidence": 0.0,
+      "status": "not_applicable",
+      "method": "n/a",
+      "name_score": 0.0,
+      "structure_score": null,
+      "alternatives": [],
+      "reason": "Loại 'database' mô tả bối cảnh, không kỳ vọng có trong mã nguồn."
+    }
+  ],
+  "dependencies": [
+    {
+      "source": "api",
+      "target": "services",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:api->services",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "api/routes.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import services.loan_service -> services.loan_service (internal)"
+        }
+      ]
+    },
+    {
+      "source": "repositories",
+      "target": "models",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:repositories->models",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "repositories/book_repo.py",
+          "line_start": 4,
+          "line_end": 4,
+          "statement": "import models.book -> models.book (internal)"
+        }
+      ]
+    },
+    {
+      "source": "services",
+      "target": "repositories",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:services->repositories",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "services/loan_service.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import repositories.book_repo -> repositories.book_repo (internal)"
+        }
+      ]
+    },
+    {
+      "source": "services",
+      "target": "models",
+      "reflexion": "absence",
+      "verdict": "missing",
+      "rule_id": "DESIGN:services->models",
+      "occurrences": 0,
+      "evidence": []
+    },
+    {
+      "source": "services",
+      "target": "notifications",
+      "reflexion": "absence",
+      "verdict": "missing",
+      "rule_id": "DESIGN:services->notifications",
+      "occurrences": 0,
+      "evidence": []
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "CCA-0001",
+      "fingerprint": "b828f2f9f0da98a9",
+      "violation_type": "missing_component",
+      "severity": "high",
+      "confidence_score": 0.1944,
+      "confidence_breakdown": {
+        "mapping": 0.3,
+        "rule_clarity": 0.9,
+        "evidence": 0.8,
+        "data_completeness": 0.9,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "needs_review",
+      "detected_by": "graph_matching",
+      "rule_id": "DESIGN:notifications",
+      "description": "Component thiết kế 'Notifications' (notifications) không tìm thấy trong mã nguồn. Ứng viên gần nhất: repositories (0.75).",
+      "source_component": "notifications",
+      "target_component": "",
+      "expected_dependency": "notifications tồn tại trong code",
+      "actual_dependency": "(không tìm thấy)",
+      "file_path": "",
+      "line_number": 0,
+      "evidence": [],
+      "recommended_action": "Hiện thực component 'notifications' hoặc khai báo ánh xạ (component_mapping) nếu nó nằm ở package khác tên; nếu đã bỏ, cập nhật tài liệu kiến trúc.",
+      "carried_over": false,
+      "scenario": "missing",
+      "scenario_detail": "component",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "missing",
+        "confidence": 0.5671,
+        "rationale": "Gần nhất với ví dụ fs-missing-1 (confirm): Không có package hay module nào tương ứng và không có ứng viên ánh xạ: component chưa được hiện thực. Tài liệu liên quan: [design:notifications] Thiết kế: Notifications; [scenarios#kich-ban-3-code-thieu-so-voi-thiet-ke] Bốn kịch bản đối chiếu kiến trúc và mã nguồn - Kịch bản 3 - code thiếu so với thiết kế.",
+        "suggested_fix": "Hiện thực Notifications hoặc cập nhật tài liệu nếu đã bỏ tính năng.",
+        "retrieved_docs": [
+          "design:notifications",
+          "scenarios#kich-ban-3-code-thieu-so-voi-thiet-ke",
+          "scenarios#kich-ban-1-khop-hoan-toan",
+          "scenarios#kich-ban-4-code-rac-thiet-ke-khong-co"
+        ],
+        "cited_docs": [
+          "design:notifications",
+          "scenarios#kich-ban-3-code-thieu-so-voi-thiet-ke"
+        ],
+        "few_shot_ids": [
+          "fs-missing-1",
+          "fs-missing-3",
+          "fs-missing-4"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    },
+    {
+      "finding_id": "CCA-0002",
+      "fingerprint": "2360fe5d3e003b67",
+      "violation_type": "missing_dependency",
+      "severity": "medium",
+      "confidence_score": 0.6137,
+      "confidence_breakdown": {
+        "mapping": 0.9025,
+        "rule_clarity": 0.85,
+        "evidence": 0.8,
+        "data_completeness": 1.0,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "needs_review",
+      "detected_by": "graph_matching",
+      "rule_id": "DESIGN:services->models",
+      "description": "Thiết kế có services -> models nhưng không tìm thấy import tương ứng trong mã nguồn.",
+      "source_component": "services",
+      "target_component": "models",
+      "expected_dependency": "services -> models",
+      "actual_dependency": "(không có)",
+      "file_path": "",
+      "line_number": 0,
+      "evidence": [],
+      "recommended_action": "Thiết kế yêu cầu services -> models nhưng không thấy import tương ứng. Kiểm tra lời gọi động/HTTP; nếu thiết kế đã lỗi thời, cập nhật tài liệu.",
+      "carried_over": false,
+      "scenario": "missing",
+      "scenario_detail": "dependency",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "missing",
+        "confidence": 0.6332,
+        "rationale": "Gần nhất với ví dụ fs-missing-4 (confirm): Hai component cùng tiến trình nên quan hệ thiết kế phải hiện ra dưới dạng import; không có import nghĩa là service đang bỏ qua entity (xử lý dữ liệu thô). Tài liệu liên quan: [scenarios#kich-ban-1-khop-hoan-toan] Bốn kịch bản đối chiếu kiến trúc và mã nguồn - Kịch bản 1 - khớp hoàn toàn; [scenarios#kich-ban-3-code-thieu-so-voi-thiet-ke] Bốn kịch bản đối chiếu kiến trúc và mã nguồn - Kịch bản 3 - code thiếu so với thiết kế.",
+        "suggested_fix": "Cho services làm việc với entity trong models, hoặc cập nhật thiết kế nếu quan hệ đã bỏ.",
+        "retrieved_docs": [
+          "scenarios#kich-ban-1-khop-hoan-toan",
+          "scenarios#kich-ban-3-code-thieu-so-voi-thiet-ke",
+          "design:models",
+          "design:services"
+        ],
+        "cited_docs": [
+          "scenarios#kich-ban-1-khop-hoan-toan",
+          "scenarios#kich-ban-3-code-thieu-so-voi-thiet-ke"
+        ],
+        "few_shot_ids": [
+          "fs-missing-4",
+          "fs-missing-2",
+          "fs-missing-1"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    }
+  ],
+  "drift": {
+    "design_components": 5,
+    "actual_components": 4,
+    "matched_components": 4,
+    "design_dependencies": 5,
+    "actual_dependencies": 3,
+    "convergences": 3,
+    "divergences": 0,
+    "absences": 2,
+    "component_coverage": 0.8,
+    "dependency_conformance": 1.0,
+    "dependency_realization": 0.6,
+    "structural_similarity": 0.7,
+    "drift_score": 0.3,
+    "violation_index": 0.0453,
+    "drift_level": "moderate",
+    "previous_drift_score": null,
+    "drift_trend": null,
+    "changed_relations": {
+      "added_dependencies": [],
+      "removed_dependencies": [
+        "services -> models",
+        "services -> notifications"
+      ],
+      "added_components": [],
+      "missing_components": [
+        "notifications"
+      ]
+    }
+  },
+  "scenario_report": {
+    "verdict": "mismatch",
+    "primary_scenario": "missing",
+    "scenarios_present": [
+      "match",
+      "missing"
+    ],
+    "counts": {
+      "match": 7,
+      "wrong": 0,
+      "missing": 2,
+      "junk": 0,
+      "uncertain": 0
+    },
+    "match": [
+      {
+        "kind": "component",
+        "source": "api",
+        "target": "api",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "services",
+        "target": "services",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "repositories",
+        "target": "repositories",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "models",
+        "target": "models",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "api",
+        "target": "services",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "repositories",
+        "target": "models",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "services",
+        "target": "repositories",
+        "detail": "convergence",
+        "finding_ids": []
+      }
+    ],
+    "wrong": [],
+    "missing": [
+      {
+        "kind": "component",
+        "source": "notifications",
+        "target": "",
+        "detail": "component",
+        "finding_ids": [
+          "CCA-0001"
+        ]
+      },
+      {
+        "kind": "dependency",
+        "source": "services",
+        "target": "models",
+        "detail": "dependency",
+        "finding_ids": [
+          "CCA-0002"
+        ]
+      }
+    ],
+    "junk": [],
+    "uncertain": [],
+    "match_ratio": 0.7778,
+    "summary": "Kết luận: KHÔNG khớp; kịch bản chính: code thiếu so với thiết kế. Tỷ lệ khớp 78% (7 phần tử khớp). Code thiếu so với thiết kế (2): notifications (component), services -> models.",
+    "summary_by": "template"
+  },
+  "review": {
+    "mode": "local",
+    "provider": "local-fewshot",
+    "model": "knn-fewshot-v1",
+    "policy": "advisory",
+    "reviewed": 2,
+    "llm_calls": 0,
+    "cache_hits": 0,
+    "fallbacks": 0,
+    "local_fallback_reviews": 0,
+    "status_changes": 0,
+    "disagreements": 0,
+    "rag_documents": 33,
+    "few_shot_pool": 19,
+    "errors": []
+  },
+  "statistics": {
+    "total_findings": 2,
+    "open_violations": 2,
+    "by_type": {
+      "missing_component": 1,
+      "missing_dependency": 1
+    },
+    "by_severity": {
+      "high": 1,
+      "medium": 1
+    },
+    "by_status": {
+      "needs_review": 2
+    },
+    "valid_dependencies": 3,
+    "invalid_dependencies": 0,
+    "undetermined_dependencies": 0
+  },
+  "visualization": {
+    "nodes": [
+      {
+        "id": "reader",
+        "label": "Bạn đọc",
+        "kind": "design",
+        "status": "context",
+        "layer": null
+      },
+      {
+        "id": "api",
+        "label": "API",
+        "kind": "design",
+        "status": "matched",
+        "layer": "presentation"
+      },
+      {
+        "id": "services",
+        "label": "Services",
+        "kind": "design",
+        "status": "matched",
+        "layer": "application"
+      },
+      {
+        "id": "repositories",
+        "label": "Repositories",
+        "kind": "design",
+        "status": "matched",
+        "layer": "infrastructure"
+      },
+      {
+        "id": "notifications",
+        "label": "Notifications",
+        "kind": "design",
+        "status": "missing",
+        "layer": "infrastructure"
+      },
+      {
+        "id": "models",
+        "label": "Models",
+        "kind": "design",
+        "status": "matched",
+        "layer": "domain"
+      },
+      {
+        "id": "database",
+        "label": "Database",
+        "kind": "design",
+        "status": "context",
+        "layer": null
+      }
+    ],
+    "edges": [
+      {
+        "source": "api",
+        "target": "services",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      },
+      {
+        "source": "repositories",
+        "target": "models",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      },
+      {
+        "source": "services",
+        "target": "repositories",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      },
+      {
+        "source": "services",
+        "target": "models",
+        "reflexion": "absence",
+        "verdict": "missing",
+        "weight": 0
+      },
+      {
+        "source": "services",
+        "target": "notifications",
+        "reflexion": "absence",
+        "verdict": "missing",
+        "weight": 0
+      }
+    ]
+  },
+  "performance": {
+    "total_ms": 9.482,
+    "phase_ms": {
+      "normalize": 0.52,
+      "monitor": 0.086,
+      "analyze": 0.8,
+      "plan": 0.031,
+      "graph_matching": 4.228,
+      "rule_engine_and_drift": 0.42,
+      "execute": 4.652,
+      "review": 3.378,
+      "knowledge": 0.015
+    },
+    "design_nodes": 7,
+    "design_edges": 7,
+    "code_modules": 8,
+    "code_dependencies": 5,
+    "internal_dependencies": 3,
+    "unresolved_imports": 0,
+    "llm_calls": 0
+  },
+  "warnings": [],
+  "errors": []
+}

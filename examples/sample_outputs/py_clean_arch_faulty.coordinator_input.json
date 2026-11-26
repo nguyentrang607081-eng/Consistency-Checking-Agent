@@ -1,0 +1,84 @@
+{
+  "context": {
+    "project_id": "py-clean-arch",
+    "scan_id": "scan-2-faulty",
+    "commit_hash": "",
+    "scan_scope": "full",
+    "scanned_modules": [],
+    "baseline_scan_id": "scan-1-clean"
+  },
+  "consistency_result": {
+    "drift_score": 0.2174,
+    "findings": [
+      {
+        "id": "CCA-0001",
+        "rule_id": "LAYER:application->composition",
+        "type": "forbidden_dependency",
+        "severity": "high",
+        "source_component": "usecases",
+        "target_component": "dependency_injection",
+        "file": "src/usecases/pokemon.py",
+        "line": 2,
+        "evidence": "[layer_violation|wrong|confirmed] Layer 'application' (trong) phụ thuộc ngược lên layer 'composition' (ngoài): usecases -> dependency_injection. (2 lần import) | import di.unit_of_work -> di.unit_of_work (internal); import di.unit_of_work -> di.unit_of_work (internal)",
+        "confidence": 0.8392,
+        "source": "rule_engine"
+      },
+      {
+        "id": "CCA-0002",
+        "rule_id": "DESIGN:component-set",
+        "type": "divergence",
+        "severity": "high",
+        "source_component": "domain",
+        "target_component": "-",
+        "file": "src/models/pokemon.py",
+        "line": 8,
+        "evidence": "[unexpected_component|junk|confirmed] Package 'domain' được import nhưng KHÔNG tồn tại trong mã nguồn (package ma), cũng không có trong kiến trúc. | import src.domain.order -> domain.order (unresolved_internal)",
+        "confidence": 0.81,
+        "source": "graph_matching"
+      },
+      {
+        "id": "CCA-0003",
+        "rule_id": "DESIGN:component-set",
+        "type": "divergence",
+        "severity": "high",
+        "source_component": "infrastructure",
+        "target_component": "-",
+        "file": "src/controllers/graphql/pokemon/mapper.py",
+        "line": 13,
+        "evidence": "[unexpected_component|junk|confirmed] Package 'infrastructure' được import nhưng KHÔNG tồn tại trong mã nguồn (package ma), cũng không có trong kiến trúc. | import src.infrastructure.user_repository -> infrastructure.user_repository (unresolved_internal); import src.infrastructure.database -> infrastructure.database (unresolved_internal)",
+        "confidence": 0.81,
+        "source": "graph_matching"
+      },
+      {
+        "id": "CCA-0004",
+        "rule_id": "DEFAULT:design_only",
+        "type": "divergence",
+        "severity": "medium",
+        "source_component": "controllers",
+        "target_component": "infrastructure",
+        "file": "src/controllers/graphql/pokemon/mapper.py",
+        "line": 13,
+        "evidence": "[unexpected_dependency|junk|needs_review] Phụ thuộc controllers -> infrastructure không có trong kiến trúc thiết kế. (2 lần import) | import src.infrastructure.user_repository -> infrastructure.user_repository (unresolved_internal); import src.infrastructure.database -> infrastructure.database (unresolved_internal)",
+        "confidence": 0.4724,
+        "source": "rule_engine"
+      },
+      {
+        "id": "CCA-0005",
+        "rule_id": "DEFAULT:design_only",
+        "type": "divergence",
+        "severity": "medium",
+        "source_component": "entities",
+        "target_component": "domain",
+        "file": "src/models/pokemon.py",
+        "line": 8,
+        "evidence": "[unexpected_dependency|junk|needs_review] Phụ thuộc entities -> domain không có trong kiến trúc thiết kế. (1 lần import) | import src.domain.order -> domain.order (unresolved_internal)",
+        "confidence": 0.4242,
+        "source": "rule_engine"
+      }
+    ],
+    "warnings": [
+      "Sinh bởi consistency_agent.tools.sca_fallback (ast), không phải SCA tree-sitter."
+    ],
+    "errors": []
+  }
+}

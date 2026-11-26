@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "system_name": "py-clean-arch (Pokemon & Trainer API)",
+  "nodes": [
+    {"id": "client", "name": "API Client", "type": "actor", "c4_level": "context", "source": "text", "confidence": 0.9},
+    {"id": "controllers", "name": "Controllers", "type": "ui", "c4_level": "component", "properties": {"tech_stack": "FastAPI, Strawberry GraphQL"}, "source": "text", "confidence": 0.95, "evidence": "README: controllers/ - External interfaces like REST & GraphQL endpoints"},
+    {"id": "usecases", "name": "Use Cases", "type": "service", "c4_level": "component", "source": "text", "confidence": 0.95, "evidence": "README: usecases/ - application-specific business rules"},
+    {"id": "repositories", "name": "Repositories", "type": "service", "c4_level": "component", "source": "text", "confidence": 0.95, "evidence": "README: repositories/ - Data access abstraction layer"},
+    {"id": "entities", "name": "Domain Entities", "type": "service", "c4_level": "component", "source": "text", "confidence": 0.9, "evidence": "README: models/ - Domain entities ('Entities' in Clean Architecture)"},
+    {"id": "dependency_injection", "name": "Dependency Injection", "type": "service", "c4_level": "component", "source": "text", "confidence": 0.9, "evidence": "README: di/ - Dependency injection configurations"},
+    {"id": "settings", "name": "Settings", "type": "service", "c4_level": "component", "source": "text", "confidence": 0.9},
+    {"id": "shared", "name": "Shared Utilities", "type": "service", "c4_level": "component", "source": "text", "confidence": 0.85, "evidence": "README: common/ - Shared code and utilities"},
+    {"id": "database", "name": "Database", "type": "database", "c4_level": "container", "properties": {"tech_stack": "SQLite/MySQL/PostgreSQL, MongoDB, Redis"}, "source": "text", "confidence": 0.9}
+  ],
+  "edges": [
+    {"id": "e0", "source_id": "client", "target_id": "controllers", "relationship_type": "sync_call", "label": "HTTP REST/GraphQL", "source": "text", "confidence": 0.9},
+    {"id": "e1", "source_id": "controllers", "target_id": "usecases", "relationship_type": "dependency", "source": "text", "confidence": 0.95},
+    {"id": "e2", "source_id": "controllers", "target_id": "entities", "relationship_type": "dependency", "source": "text", "confidence": 0.9},
+    {"id": "e3", "source_id": "controllers", "target_id": "dependency_injection", "relationship_type": "dependency", "source": "text", "confidence": 0.85},
+    {"id": "e4", "source_id": "controllers", "target_id": "shared", "relationship_type": "dependency", "source": "text", "confidence": 0.85},
+    {"id": "e5", "source_id": "usecases", "target_id": "entities", "relationship_type": "dependency", "source": "text", "confidence": 0.95},
+    {"id": "e6", "source_id": "usecases", "target_id": "shared", "relationship_type": "dependency", "source": "text", "confidence": 0.85},
+    {"id": "e7", "source_id": "repositories", "target_id": "entities", "relationship_type": "dependency", "source": "text", "confidence": 0.95},
+    {"id": "e8", "source_id": "repositories", "target_id": "shared", "relationship_type": "dependency", "source": "text", "confidence": 0.85},
+    {"id": "e9", "source_id": "entities", "target_id": "shared", "relationship_type": "dependency", "source": "text", "confidence": 0.85},
+    {"id": "e10", "source_id": "dependency_injection", "target_id": "repositories", "relationship_type": "dependency", "source": "text", "confidence": 0.9},
+    {"id": "e11", "source_id": "dependency_injection", "target_id": "settings", "relationship_type": "dependency", "source": "text", "confidence": 0.9},
+    {"id": "e12", "source_id": "repositories", "target_id": "database", "relationship_type": "data_flow", "label": "SQL / Mongo / Redis", "source": "text", "confidence": 0.9}
+  ],
+  "warnings": []
+}

@@ -1,0 +1,3159 @@
+{
+  "schema_version": "1.0",
+  "project_id": "py-clean-arch",
+  "run_id": "scan-clean",
+  "agent_name": "Source Code Analysis",
+  "status": "SUCCESS",
+  "confidence": 0.95,
+  "evidence": [
+    "py-clean-arch/src/common/__init__.py",
+    "py-clean-arch/src/common/docstring.py",
+    "py-clean-arch/src/common/type.py",
+    "py-clean-arch/src/common/utils.py",
+    "py-clean-arch/src/controllers/__init__.py",
+    "py-clean-arch/src/controllers/graphql/__init__.py",
+    "py-clean-arch/src/controllers/graphql/extension.py",
+    "py-clean-arch/src/controllers/graphql/pokemon/__init__.py",
+    "py-clean-arch/src/controllers/graphql/pokemon/mapper.py",
+    "py-clean-arch/src/controllers/graphql/pokemon/mutation.py",
+    "py-clean-arch/src/controllers/graphql/pokemon/query.py",
+    "py-clean-arch/src/controllers/graphql/pokemon/schema.py",
+    "py-clean-arch/src/controllers/graphql/router.py",
+    "py-clean-arch/src/controllers/graphql/trainer/__init__.py",
+    "py-clean-arch/src/controllers/graphql/trainer/mapper.py",
+    "py-clean-arch/src/controllers/graphql/trainer/mutation.py",
+    "py-clean-arch/src/controllers/graphql/trainer/query.py",
+    "py-clean-arch/src/controllers/graphql/trainer/schema.py",
+    "py-clean-arch/src/controllers/rest/__init__.py",
+    "py-clean-arch/src/controllers/rest/extension.py",
+    "py-clean-arch/src/controllers/rest/pokemon/__init__.py",
+    "py-clean-arch/src/controllers/rest/pokemon/mapper.py",
+    "py-clean-arch/src/controllers/rest/pokemon/router.py",
+    "py-clean-arch/src/controllers/rest/pokemon/schema.py",
+    "py-clean-arch/src/controllers/rest/trainer/__init__.py",
+    "py-clean-arch/src/controllers/rest/trainer/mapper.py",
+    "py-clean-arch/src/controllers/rest/trainer/router.py",
+    "py-clean-arch/src/controllers/rest/trainer/schema.py",
+    "py-clean-arch/src/di/__init__.py",
+    "py-clean-arch/src/di/dependency_injection.py",
+    "py-clean-arch/src/di/unit_of_work.py",
+    "py-clean-arch/src/main.py",
+    "py-clean-arch/src/models/__init__.py",
+    "py-clean-arch/src/models/exception.py",
+    "py-clean-arch/src/models/pokemon.py",
+    "py-clean-arch/src/models/trainer.py",
+    "py-clean-arch/src/repositories/__init__.py",
+    "py-clean-arch/src/repositories/abstraction/__init__.py",
+    "py-clean-arch/src/repositories/abstraction/pokemon.py",
+    "py-clean-arch/src/repositories/abstraction/trainer.py",
+    "py-clean-arch/src/repositories/document_db/__init__.py",
+    "py-clean-arch/src/repositories/document_db/pokemon/__init__.py",
+    "py-clean-arch/src/repositories/document_db/pokemon/mapper.py",
+    "py-clean-arch/src/repositories/document_db/pokemon/odm.py",
+    "py-clean-arch/src/repositories/document_db/pokemon/repository.py",
+    "py-clean-arch/src/repositories/document_db/trainer/__init__.py",
+    "py-clean-arch/src/repositories/document_db/trainer/mapper.py",
+    "py-clean-arch/src/repositories/document_db/trainer/odm.py",
+    "py-clean-arch/src/repositories/document_db/trainer/repository.py",
+    "py-clean-arch/src/repositories/key_value_db/__init__.py",
+    "py-clean-arch/src/repositories/key_value_db/pokemon/__init__.py",
+    "py-clean-arch/src/repositories/key_value_db/pokemon/mapper.py",
+    "py-clean-arch/src/repositories/key_value_db/pokemon/okvm.py",
+    "py-clean-arch/src/repositories/key_value_db/pokemon/repository.py",
+    "py-clean-arch/src/repositories/key_value_db/trainer/__init__.py",
+    "py-clean-arch/src/repositories/key_value_db/trainer/mapper.py",
+    "py-clean-arch/src/repositories/key_value_db/trainer/okvm.py",
+    "py-clean-arch/src/repositories/key_value_db/trainer/repository.py",
+    "py-clean-arch/src/repositories/relational_db/__init__.py",
+    "py-clean-arch/src/repositories/relational_db/base.py",
+    "py-clean-arch/src/repositories/relational_db/pokemon/__init__.py",
+    "py-clean-arch/src/repositories/relational_db/pokemon/mapper.py",
+    "py-clean-arch/src/repositories/relational_db/pokemon/orm.py",
+    "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+    "py-clean-arch/src/repositories/relational_db/trainer/__init__.py",
+    "py-clean-arch/src/repositories/relational_db/trainer/mapper.py",
+    "py-clean-arch/src/repositories/relational_db/trainer/orm.py",
+    "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+    "py-clean-arch/src/settings/__init__.py",
+    "py-clean-arch/src/settings/db/__init__.py",
+    "py-clean-arch/src/settings/db/base.py",
+    "py-clean-arch/src/settings/db/mongodb.py",
+    "py-clean-arch/src/settings/db/mysql.py",
+    "py-clean-arch/src/settings/db/postgres.py",
+    "py-clean-arch/src/settings/db/redis.py",
+    "py-clean-arch/src/settings/db/sqlite.py",
+    "py-clean-arch/src/usecases/__init__.py",
+    "py-clean-arch/src/usecases/pokemon.py",
+    "py-clean-arch/src/usecases/trainer.py",
+    "py-clean-arch/tests/__init__.py",
+    "py-clean-arch/tests/conftest.py",
+    "py-clean-arch/tests/functional/__init__.py",
+    "py-clean-arch/tests/functional/test_operations.py",
+    "py-clean-arch/tests/integration/__init__.py",
+    "py-clean-arch/tests/integration/test_graphql_apis.py",
+    "py-clean-arch/tests/integration/test_rest_apis.py",
+    "py-clean-arch/tests/unit/__init__.py",
+    "py-clean-arch/tests/unit/test_repository_document_db.py",
+    "py-clean-arch/tests/unit/test_repository_key_value_db.py",
+    "py-clean-arch/tests/unit/test_repository_relational_db.py",
+    "py-clean-arch/tests/unit/test_usecase.py"
+  ],
+  "payload": {
+    "dependencies": [
+      {
+        "from_module": "type",
+        "to_module": "re",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/common/type.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "utils",
+        "to_module": "uuid",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/common/utils.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "extension",
+        "to_module": "fastapi",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/extension.py",
+          "line_start": 10,
+          "line_end": 10
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.docstring",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 4,
+          "line_end": 10
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": ".schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mapper.py",
+          "line_start": 12,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "strawberry",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "strawberry.types",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "usecases.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "di.dependency_injection",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "di.unit_of_work",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 11,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": ".schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/mutation.py",
+          "line_start": 12,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/query.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "strawberry",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/query.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "strawberry.types",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/query.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "usecases.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/query.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/query.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "di.dependency_injection",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/query.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "di.unit_of_work",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/query.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/query.py",
+          "line_start": 11,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": ".schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/query.py",
+          "line_start": 12,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "schema",
+        "to_module": "strawberry",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/schema.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "schema",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/pokemon/schema.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "strawberry",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/router.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "strawberry.fastapi",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/router.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "strawberry.schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/router.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "strawberry.schema.config",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/router.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": ".pokemon.mutation",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/router.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": ".pokemon.query",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/router.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": ".trainer.mutation",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/router.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": ".trainer.query",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/router.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.docstring",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mapper.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mapper.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mapper.py",
+          "line_start": 4,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": ".schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mapper.py",
+          "line_start": 14,
+          "line_end": 23
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mutation.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "strawberry",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mutation.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "strawberry.types",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mutation.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "usecases.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mutation.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mutation.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "di.dependency_injection",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mutation.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": "di.unit_of_work",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mutation.py",
+          "line_start": 10,
+          "line_end": 10
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mutation.py",
+          "line_start": 12,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "mutation",
+        "to_module": ".schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/mutation.py",
+          "line_start": 13,
+          "line_end": 21
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/query.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "strawberry",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/query.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "strawberry.types",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/query.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "usecases.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/query.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/query.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "di.dependency_injection",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/query.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": "di.unit_of_work",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/query.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/query.py",
+          "line_start": 11,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "query",
+        "to_module": ".schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/query.py",
+          "line_start": 12,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "schema",
+        "to_module": "strawberry",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/schema.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "schema",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/graphql/trainer/schema.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "extension",
+        "to_module": "fastapi",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/extension.py",
+          "line_start": 12,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "extension",
+        "to_module": "fastapi.responses",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/extension.py",
+          "line_start": 13,
+          "line_end": 13
+        }
+      },
+      {
+        "from_module": "extension",
+        "to_module": "models.exception",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/extension.py",
+          "line_start": 15,
+          "line_end": 22
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.docstring",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/mapper.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/mapper.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/mapper.py",
+          "line_start": 4,
+          "line_end": 10
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": ".schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/mapper.py",
+          "line_start": 12,
+          "line_end": 18
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "fastapi",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/router.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/router.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "di.dependency_injection",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/router.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "di.unit_of_work",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/router.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "usecases",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/router.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/router.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": ".schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/router.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "schema",
+        "to_module": "pydantic",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/schema.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "schema",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/pokemon/schema.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.docstring",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/mapper.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/mapper.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/mapper.py",
+          "line_start": 4,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": ".schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/mapper.py",
+          "line_start": 14,
+          "line_end": 23
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "fastapi",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/router.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/router.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "di.dependency_injection",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/router.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "di.unit_of_work",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/router.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": "usecases",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/router.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/router.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "router",
+        "to_module": ".schema",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/router.py",
+          "line_start": 10,
+          "line_end": 18
+        }
+      },
+      {
+        "from_module": "schema",
+        "to_module": "pydantic",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/schema.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "schema",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/controllers/rest/trainer/schema.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "injector",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 27,
+          "line_end": 27
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "motor.motor_asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 28,
+          "line_end": 28
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "sqlalchemy.ext.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 29,
+          "line_end": 29
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "repositories.document_db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 31,
+          "line_end": 31
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "repositories.key_value_db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 32,
+          "line_end": 32
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "repositories.relational_db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 33,
+          "line_end": 33
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "settings.db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 34,
+          "line_end": 34
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": ".unit_of_work",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 36,
+          "line_end": 41
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "settings.db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 80,
+          "line_end": 80
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "settings.db.mongodb",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 108,
+          "line_end": 108
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "settings.db.mongodb",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 124,
+          "line_end": 124
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "settings.db.mongodb",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 135,
+          "line_end": 135
+        }
+      },
+      {
+        "from_module": "dependency_injection",
+        "to_module": "settings.db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/dependency_injection.py",
+          "line_start": 143,
+          "line_end": 143
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "abc",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "abc",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "motor.motor_asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "redis.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "sqlalchemy.ext.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "repositories.abstraction",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "repositories.document_db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 10,
+          "line_end": 10
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "repositories.key_value_db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 11,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "repositories.relational_db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 12,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "unit_of_work",
+        "to_module": "settings.db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/di/unit_of_work.py",
+          "line_start": 57,
+          "line_end": 57
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "contextlib",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "fastapi",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "fastapi.responses",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "controllers.graphql.extension",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "controllers.graphql.router",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "controllers.rest.extension",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "controllers.rest.pokemon.router",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "controllers.rest.trainer.router",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 10,
+          "line_end": 10
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "settings",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 11,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "settings.db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 12,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "main",
+        "to_module": "repositories.relational_db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/main.py",
+          "line_start": 22,
+          "line_end": 22
+        }
+      },
+      {
+        "from_module": "pokemon",
+        "to_module": "dataclasses",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/models/pokemon.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "pokemon",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/models/pokemon.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "trainer",
+        "to_module": "dataclasses",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/models/trainer.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "trainer",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/models/trainer.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/abstraction/__init__.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/abstraction/__init__.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "pokemon",
+        "to_module": "abc",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/abstraction/pokemon.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "pokemon",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/abstraction/pokemon.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "pokemon",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/abstraction/pokemon.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "pokemon",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/abstraction/pokemon.py",
+          "line_start": 6,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "trainer",
+        "to_module": "abc",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/abstraction/trainer.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "trainer",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/abstraction/trainer.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "trainer",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/abstraction/trainer.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "trainer",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/abstraction/trainer.py",
+          "line_start": 6,
+          "line_end": 10
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".pokemon.repository",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/__init__.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".trainer.repository",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/__init__.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "uuid",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/mapper.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/mapper.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/mapper.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/repository.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "bson",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/repository.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "motor.motor_asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/repository.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/repository.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.exception",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/repository.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/repository.py",
+          "line_start": 8,
+          "line_end": 13
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "...abstraction",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/repository.py",
+          "line_start": 15,
+          "line_end": 15
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/pokemon/repository.py",
+          "line_start": 16,
+          "line_end": 16
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.docstring",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/trainer/mapper.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/trainer/mapper.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/trainer/repository.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "motor.motor_asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/trainer/repository.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/trainer/repository.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "common.utils",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/trainer/repository.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.exception",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/trainer/repository.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/trainer/repository.py",
+          "line_start": 9,
+          "line_end": 13
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "...abstraction",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/trainer/repository.py",
+          "line_start": 15,
+          "line_end": 15
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/document_db/trainer/repository.py",
+          "line_start": 16,
+          "line_end": 16
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".pokemon.repository",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/__init__.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".trainer.repository",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/__init__.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "uuid",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/mapper.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/mapper.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/mapper.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "re",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/repository.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/repository.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "redis.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/repository.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/repository.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.exception",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/repository.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/repository.py",
+          "line_start": 8,
+          "line_end": 13
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "...abstraction",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/repository.py",
+          "line_start": 15,
+          "line_end": 15
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/pokemon/repository.py",
+          "line_start": 16,
+          "line_end": 16
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.docstring",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/mapper.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/mapper.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "re",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/repository.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/repository.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "redis.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/repository.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/repository.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "common.utils",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/repository.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.exception",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/repository.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/repository.py",
+          "line_start": 9,
+          "line_end": 13
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "...abstraction",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/repository.py",
+          "line_start": 15,
+          "line_end": 15
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/key_value_db/trainer/repository.py",
+          "line_start": 16,
+          "line_end": 16
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".base",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/__init__.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".pokemon.repository",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/__init__.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".trainer.repository",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/__init__.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "base",
+        "to_module": "sqlalchemy.orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/base.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.docstring",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/mapper.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/mapper.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": ".orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/mapper.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "sqlalchemy",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/orm.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "sqlalchemy.orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/orm.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/orm.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "common.utils",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/orm.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "..base",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/orm.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "sqlalchemy.ext.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "sqlalchemy.orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "sqlalchemy.sql",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.exception",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+          "line_start": 9,
+          "line_end": 14
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "...abstraction",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+          "line_start": 16,
+          "line_end": 16
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+          "line_start": 17,
+          "line_end": 17
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": ".orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/pokemon/repository.py",
+          "line_start": 18,
+          "line_end": 18
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "common.docstring",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/mapper.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/mapper.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "mapper",
+        "to_module": ".orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/mapper.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "sqlalchemy",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/orm.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "sqlalchemy.orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/orm.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/orm.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "common.utils",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/orm.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "..base",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/orm.py",
+          "line_start": 7,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "orm",
+        "to_module": "..pokemon.orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/orm.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "sqlalchemy.ext.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "sqlalchemy.orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "sqlalchemy.sql",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.exception",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+          "line_start": 10,
+          "line_end": 14
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": "...abstraction",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+          "line_start": 16,
+          "line_end": 16
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": ".mapper",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+          "line_start": 17,
+          "line_end": 17
+        }
+      },
+      {
+        "from_module": "repository",
+        "to_module": ".orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/repositories/relational_db/trainer/repository.py",
+          "line_start": 18,
+          "line_end": 18
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": "os",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/__init__.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": "urllib.parse",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": "settings",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".sqlite",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 11,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".sqlite",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 12,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".sqlite",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 13,
+          "line_end": 13
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".sqlite",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 14,
+          "line_end": 14
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".mysql",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 19,
+          "line_end": 19
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".mysql",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 20,
+          "line_end": 20
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".mysql",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 21,
+          "line_end": 21
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".mysql",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 22,
+          "line_end": 22
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".postgres",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 27,
+          "line_end": 27
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".postgres",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 28,
+          "line_end": 28
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".postgres",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 29,
+          "line_end": 29
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".postgres",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 30,
+          "line_end": 30
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".mongodb",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 35,
+          "line_end": 40
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".mongodb",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 41,
+          "line_end": 41
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".redis",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 46,
+          "line_end": 46
+        }
+      },
+      {
+        "from_module": "__init__",
+        "to_module": ".redis",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/__init__.py",
+          "line_start": 47,
+          "line_end": 47
+        }
+      },
+      {
+        "from_module": "base",
+        "to_module": "urllib.parse",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/base.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "mongodb",
+        "to_module": "urllib.parse",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/mongodb.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "mongodb",
+        "to_module": "motor.motor_asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/mongodb.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "mongodb",
+        "to_module": "..",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/mongodb.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "mongodb",
+        "to_module": ".base",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/mongodb.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "mysql",
+        "to_module": "asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/mysql.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "mysql",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/mysql.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "mysql",
+        "to_module": "sqlalchemy.ext.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/mysql.py",
+          "line_start": 5,
+          "line_end": 10
+        }
+      },
+      {
+        "from_module": "mysql",
+        "to_module": "sqlalchemy.orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/mysql.py",
+          "line_start": 11,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "mysql",
+        "to_module": "..",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/mysql.py",
+          "line_start": 13,
+          "line_end": 13
+        }
+      },
+      {
+        "from_module": "mysql",
+        "to_module": ".base",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/mysql.py",
+          "line_start": 14,
+          "line_end": 14
+        }
+      },
+      {
+        "from_module": "postgres",
+        "to_module": "asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/postgres.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "postgres",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/postgres.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "postgres",
+        "to_module": "sqlalchemy.ext.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/postgres.py",
+          "line_start": 5,
+          "line_end": 10
+        }
+      },
+      {
+        "from_module": "postgres",
+        "to_module": "sqlalchemy.orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/postgres.py",
+          "line_start": 11,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "postgres",
+        "to_module": "..",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/postgres.py",
+          "line_start": 13,
+          "line_end": 13
+        }
+      },
+      {
+        "from_module": "postgres",
+        "to_module": ".base",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/postgres.py",
+          "line_start": 14,
+          "line_end": 14
+        }
+      },
+      {
+        "from_module": "redis",
+        "to_module": "redis.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/redis.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "redis",
+        "to_module": "redis.exceptions",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/redis.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "redis",
+        "to_module": "..",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/redis.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "redis",
+        "to_module": ".base",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/redis.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "sqlite",
+        "to_module": "asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/sqlite.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "sqlite",
+        "to_module": "typing",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/sqlite.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "sqlite",
+        "to_module": "sqlalchemy",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/sqlite.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "sqlite",
+        "to_module": "sqlalchemy.ext.asyncio",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/sqlite.py",
+          "line_start": 5,
+          "line_end": 10
+        }
+      },
+      {
+        "from_module": "sqlite",
+        "to_module": "sqlalchemy.orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/sqlite.py",
+          "line_start": 11,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "sqlite",
+        "to_module": "sqlalchemy.sql",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/sqlite.py",
+          "line_start": 12,
+          "line_end": 12
+        }
+      },
+      {
+        "from_module": "sqlite",
+        "to_module": "..",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/sqlite.py",
+          "line_start": 14,
+          "line_end": 14
+        }
+      },
+      {
+        "from_module": "sqlite",
+        "to_module": ".base",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/settings/db/sqlite.py",
+          "line_start": 15,
+          "line_end": 15
+        }
+      },
+      {
+        "from_module": "pokemon",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/usecases/pokemon.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "pokemon",
+        "to_module": "di.unit_of_work",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/usecases/pokemon.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "pokemon",
+        "to_module": "models.exception",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/usecases/pokemon.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "pokemon",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/usecases/pokemon.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "trainer",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/usecases/trainer.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "trainer",
+        "to_module": "di.unit_of_work",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/usecases/trainer.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "trainer",
+        "to_module": "models.exception",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/usecases/trainer.py",
+          "line_start": 3,
+          "line_end": 7
+        }
+      },
+      {
+        "from_module": "trainer",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/src/usecases/trainer.py",
+          "line_start": 8,
+          "line_end": 15
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "os",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "unittest.mock",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "pytest",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "httpx",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 5,
+          "line_end": 5
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "pytest",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 6,
+          "line_end": 6
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "main",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 8,
+          "line_end": 8
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "settings.db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 9,
+          "line_end": 9
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "sqlalchemy",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 104,
+          "line_end": 104
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "sqlalchemy.sql",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 105,
+          "line_end": 105
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "repositories.relational_db.pokemon.orm",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 107,
+          "line_end": 107
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "settings.db",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 108,
+          "line_end": 108
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "settings.db.mongodb",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 147,
+          "line_end": 147
+        }
+      },
+      {
+        "from_module": "conftest",
+        "to_module": "settings.db.redis",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/conftest.py",
+          "line_start": 161,
+          "line_end": 161
+        }
+      },
+      {
+        "from_module": "test_operations",
+        "to_module": "pytest",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/functional/test_operations.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "test_operations",
+        "to_module": "tests.conftest",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/functional/test_operations.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "test_graphql_apis",
+        "to_module": "pytest",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/integration/test_graphql_apis.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "test_rest_apis",
+        "to_module": "pytest",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/integration/test_rest_apis.py",
+          "line_start": 1,
+          "line_end": 1
+        }
+      },
+      {
+        "from_module": "test_usecase",
+        "to_module": "pytest",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/unit/test_usecase.py",
+          "line_start": 24,
+          "line_end": 24
+        }
+      },
+      {
+        "from_module": "test_usecase",
+        "to_module": "common.type",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/unit/test_usecase.py",
+          "line_start": 26,
+          "line_end": 26
+        }
+      },
+      {
+        "from_module": "test_usecase",
+        "to_module": "models.exception",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/unit/test_usecase.py",
+          "line_start": 27,
+          "line_end": 31
+        }
+      },
+      {
+        "from_module": "test_usecase",
+        "to_module": "models.pokemon",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/unit/test_usecase.py",
+          "line_start": 32,
+          "line_end": 32
+        }
+      },
+      {
+        "from_module": "test_usecase",
+        "to_module": "models.trainer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/unit/test_usecase.py",
+          "line_start": 33,
+          "line_end": 40
+        }
+      },
+      {
+        "from_module": "test_usecase",
+        "to_module": "usecases",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/unit/test_usecase.py",
+          "line_start": 41,
+          "line_end": 41
+        }
+      },
+      {
+        "from_module": "test_usecase",
+        "to_module": "usecases",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "py-clean-arch/tests/unit/test_usecase.py",
+          "line_start": 42,
+          "line_end": 42
+        }
+      }
+    ]
+  },
+  "warnings": [
+    "Sinh bởi consistency_agent.tools.sca_fallback (ast), không phải SCA tree-sitter."
+  ],
+  "errors": []
+}

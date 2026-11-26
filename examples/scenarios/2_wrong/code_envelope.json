@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "project_id": "library-2_wrong",
+  "run_id": "scan-2_wrong",
+  "agent_name": "Source Code Analysis",
+  "status": "SUCCESS",
+  "confidence": 0.95,
+  "evidence": [
+    "src/api/__init__.py",
+    "src/api/routes.py",
+    "src/models/__init__.py",
+    "src/models/book.py",
+    "src/notifications/__init__.py",
+    "src/notifications/mailer.py",
+    "src/repositories/__init__.py",
+    "src/repositories/book_repo.py",
+    "src/services/__init__.py",
+    "src/services/loan_service.py"
+  ],
+  "payload": {
+    "dependencies": [
+      {
+        "from_module": "routes",
+        "to_module": "repositories.book_repo",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/api/routes.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "routes",
+        "to_module": "services.loan_service",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/api/routes.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "book",
+        "to_module": "dataclasses",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/models/book.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "book",
+        "to_module": "services.loan_service",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/models/book.py",
+          "line_start": 11,
+          "line_end": 11
+        }
+      },
+      {
+        "from_module": "mailer",
+        "to_module": "smtplib",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/notifications/mailer.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "book_repo",
+        "to_module": "sqlite3",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/repositories/book_repo.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "book_repo",
+        "to_module": "models.book",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/repositories/book_repo.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      },
+      {
+        "from_module": "loan_service",
+        "to_module": "models.book",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/services/loan_service.py",
+          "line_start": 2,
+          "line_end": 2
+        }
+      },
+      {
+        "from_module": "loan_service",
+        "to_module": "notifications.mailer",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/services/loan_service.py",
+          "line_start": 3,
+          "line_end": 3
+        }
+      },
+      {
+        "from_module": "loan_service",
+        "to_module": "repositories.book_repo",
+        "dependency_type": "import",
+        "evidence": {
+          "file_path": "src/services/loan_service.py",
+          "line_start": 4,
+          "line_end": 4
+        }
+      }
+    ]
+  },
+  "warnings": [],
+  "errors": []
+}

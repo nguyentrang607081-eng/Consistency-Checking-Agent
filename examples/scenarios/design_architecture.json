@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "system_name": "Hệ thống Quản lý Thư viện",
+  "nodes": [
+    {"id": "reader", "name": "Bạn đọc", "type": "actor", "c4_level": "context", "properties": {}, "source": "diagram", "confidence": 1.0},
+    {"id": "api", "name": "API", "type": "ui", "c4_level": "component", "properties": {"layer": "presentation"}, "source": "diagram", "confidence": 1.0},
+    {"id": "services", "name": "Services", "type": "service", "c4_level": "component", "properties": {"layer": "application"}, "source": "diagram", "confidence": 1.0},
+    {"id": "repositories", "name": "Repositories", "type": "service", "c4_level": "component", "properties": {"layer": "infrastructure"}, "source": "diagram", "confidence": 1.0},
+    {"id": "notifications", "name": "Notifications", "type": "service", "c4_level": "component", "properties": {"layer": "infrastructure"}, "source": "text", "confidence": 0.9, "evidence": "Hệ thống gửi email thông báo cho bạn đọc khi mượn sách."},
+    {"id": "models", "name": "Models", "type": "service", "c4_level": "component", "properties": {"layer": "domain"}, "source": "diagram", "confidence": 1.0},
+    {"id": "database", "name": "Database", "type": "database", "c4_level": "container", "properties": {"tech_stack": "SQLite"}, "source": "diagram", "confidence": 1.0}
+  ],
+  "edges": [
+    {"id": "e0", "source_id": "reader", "target_id": "api", "relationship_type": "sync_call", "source": "diagram", "confidence": 1.0},
+    {"id": "e1", "source_id": "api", "target_id": "services", "relationship_type": "dependency", "source": "diagram", "confidence": 1.0},
+    {"id": "e2", "source_id": "services", "target_id": "repositories", "relationship_type": "dependency", "source": "diagram", "confidence": 1.0},
+    {"id": "e3", "source_id": "services", "target_id": "models", "relationship_type": "dependency", "source": "diagram", "confidence": 1.0},
+    {"id": "e4", "source_id": "services", "target_id": "notifications", "relationship_type": "dependency", "source": "text", "confidence": 0.9},
+    {"id": "e5", "source_id": "repositories", "target_id": "models", "relationship_type": "dependency", "source": "diagram", "confidence": 1.0},
+    {"id": "e6", "source_id": "repositories", "target_id": "database", "relationship_type": "data_flow", "source": "diagram", "confidence": 1.0}
+  ],
+  "warnings": []
+}

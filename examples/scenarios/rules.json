@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "default_policy": "design_only",
+  "layers": [
+    {"name": "presentation", "components": ["api"]},
+    {"name": "application", "components": ["services"]},
+    {"name": "infrastructure", "components": ["repositories", "notifications"]},
+    {"name": "domain", "components": ["models"]}
+  ],
+  "rules": [
+    {"rule_id": "R1", "kind": "forbid", "source": "api", "target": "repositories", "severity": "high",
+     "description": "API không được truy cập Repository trực tiếp; phải đi qua Services."}
+  ]
+}

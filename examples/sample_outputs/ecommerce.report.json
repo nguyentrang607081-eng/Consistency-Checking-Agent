@@ -1,0 +1,860 @@
+{
+  "schema_version": "1.0.0",
+  "agent_name": "Consistency Checking Agent",
+  "project_id": "ecommerce-demo",
+  "scan_id": "scan-ecommerce-1",
+  "commit_hash": "",
+  "generated_at": "2026-11-26T17:31:55+00:00",
+  "status": "SUCCESS",
+  "strategy": {
+    "scope": "full",
+    "focus_components": [],
+    "matching_rounds": 3,
+    "deep_matching": false,
+    "confidence_threshold": 0.7,
+    "mapping_accept_threshold": 0.75,
+    "review_mode": "local",
+    "review_scope": "all",
+    "llm_budget": 0,
+    "reasons": [
+      "P2: chưa có lần quét trước trong Knowledge -> quét toàn bộ.",
+      "P8: chưa cấu hình LLM -> review bằng RAG + few-shot cục bộ (offline)."
+    ],
+    "source": "agent"
+  },
+  "adaptation_trace": [
+    {
+      "phase": "monitor",
+      "detail": {
+        "design_components": 6,
+        "design_edges": 5,
+        "code_modules": 11,
+        "code_dependencies": 9,
+        "internal_dependencies": 7,
+        "unresolved_imports": 0,
+        "sca_status": "SUCCESS",
+        "design_avg_confidence": 0.975,
+        "design_signature": "865001ccf3a4f649",
+        "has_baseline": false,
+        "baseline_scan_id": null,
+        "top_level_packages": 5
+      }
+    },
+    {
+      "phase": "analyze",
+      "detail": {
+        "size_class": "small",
+        "design_changed": false,
+        "changed_packages": [],
+        "change_ratio": 0.0,
+        "ambiguity_ratio": 0.25,
+        "previous_low_confidence_ratio": 0.0,
+        "data_quality": "good",
+        "ambiguous_components": 1,
+        "expected_components": 4
+      }
+    },
+    {
+      "phase": "plan",
+      "detail": {
+        "scope": "full",
+        "focus_components": [],
+        "matching_rounds": 3,
+        "deep_matching": false,
+        "confidence_threshold": 0.7,
+        "mapping_accept_threshold": 0.75,
+        "review_mode": "local",
+        "review_scope": "all",
+        "llm_budget": 0,
+        "reasons": [
+          "P2: chưa có lần quét trước trong Knowledge -> quét toàn bộ.",
+          "P8: chưa cấu hình LLM -> review bằng RAG + few-shot cục bộ (offline)."
+        ],
+        "source": "agent"
+      }
+    },
+    {
+      "phase": "execute",
+      "detail": {
+        "mapping_status": {
+          "not_applicable": 2,
+          "confirmed": 4
+        },
+        "explicit_mappings": 0,
+        "reused_mappings": 0,
+        "rejected_pairs": 0,
+        "rule_engine": {
+          "explicit_rules": 1,
+          "require_rules": 0,
+          "layers": [],
+          "default_policy": "unspecified",
+          "derived_from_design": true
+        },
+        "findings": 3,
+        "carried_over": 0
+      }
+    },
+    {
+      "phase": "execute",
+      "detail": {
+        "step": "scenario_classification+review",
+        "verdict": "mismatch",
+        "primary_scenario": "wrong",
+        "counts": {
+          "match": 7,
+          "wrong": 2,
+          "missing": 0,
+          "junk": 1,
+          "uncertain": 0
+        },
+        "mode": "local",
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "reviewed": 3,
+        "llm_calls": 0,
+        "cache_hits": 0,
+        "fallbacks": 0,
+        "status_changes": 0,
+        "disagreements": 0
+      }
+    },
+    {
+      "phase": "knowledge",
+      "detail": {
+        "persisted": false,
+        "reason": "Knowledge bị tắt"
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "design_id": "user",
+      "design_name": "Khách hàng",
+      "design_type": "actor",
+      "code_packages": [],
+      "module_count": 0,
+      "confidence": 0.0,
+      "status": "not_applicable",
+      "method": "n/a",
+      "name_score": 0.0,
+      "structure_score": null,
+      "alternatives": [],
+      "reason": "Loại 'actor' mô tả bối cảnh, không kỳ vọng có trong mã nguồn."
+    },
+    {
+      "design_id": "web_app",
+      "design_name": "Web App",
+      "design_type": "service",
+      "code_packages": [
+        "webapp"
+      ],
+      "module_count": 2,
+      "confidence": 0.955,
+      "status": "confirmed",
+      "method": "exact+structure",
+      "name_score": 1.0,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "webapp.views",
+          "score": 0.8484
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "api_gateway",
+      "design_name": "API Gateway",
+      "design_type": "service",
+      "code_packages": [
+        "gateway"
+      ],
+      "module_count": 2,
+      "confidence": 0.9244,
+      "status": "confirmed",
+      "method": "core+structure",
+      "name_score": 0.88,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "gateway.client",
+          "score": 0.7266
+        },
+        {
+          "code_package": "webapp.views",
+          "score": 0.4864
+        },
+        {
+          "code_package": "notify",
+          "score": 0.469
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "order_service",
+      "design_name": "Order Service",
+      "design_type": "service",
+      "code_packages": [
+        "orders"
+      ],
+      "module_count": 3,
+      "confidence": 0.8963,
+      "status": "confirmed",
+      "method": "core+structure",
+      "name_score": 0.88,
+      "structure_score": 0.8406,
+      "alternatives": [
+        {
+          "code_package": "orders.service",
+          "score": 0.8599
+        },
+        {
+          "code_package": "notify.sender",
+          "score": 0.3148
+        },
+        {
+          "code_package": "analytics.report",
+          "score": 0.2099
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    },
+    {
+      "design_id": "database",
+      "design_name": "Database",
+      "design_type": "database",
+      "code_packages": [],
+      "module_count": 0,
+      "confidence": 0.0,
+      "status": "not_applicable",
+      "method": "n/a",
+      "name_score": 0.0,
+      "structure_score": null,
+      "alternatives": [],
+      "reason": "Loại 'database' mô tả bối cảnh, không kỳ vọng có trong mã nguồn."
+    },
+    {
+      "design_id": "notification_service",
+      "design_name": "Notification Service",
+      "design_type": "service",
+      "code_packages": [
+        "notify"
+      ],
+      "module_count": 2,
+      "confidence": 0.7992,
+      "status": "confirmed",
+      "method": "fuzzy+structure",
+      "name_score": 0.3889,
+      "structure_score": 1.0,
+      "alternatives": [
+        {
+          "code_package": "notify.sender",
+          "score": 0.7193
+        },
+        {
+          "code_package": "orders.service",
+          "score": 0.6596
+        },
+        {
+          "code_package": "analytics",
+          "score": 0.238
+        }
+      ],
+      "reason": "Đủ bằng chứng tên + cấu trúc."
+    }
+  ],
+  "dependencies": [
+    {
+      "source": "api_gateway",
+      "target": "order_service",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:api_gateway->order_service",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "gateway/client.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import orders.service -> orders.service (internal)"
+        }
+      ]
+    },
+    {
+      "source": "analytics",
+      "target": "order_service",
+      "reflexion": "divergence",
+      "verdict": "undetermined",
+      "rule_id": "DEFAULT:unspecified",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "analytics/report.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import orders.repository -> orders.repository (internal)"
+        }
+      ]
+    },
+    {
+      "source": "notification_service",
+      "target": "order_service",
+      "reflexion": "divergence",
+      "verdict": "forbidden",
+      "rule_id": "DESIGN:order_service->notification_service",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "notify/sender.py",
+          "line_start": 7,
+          "line_end": 7,
+          "statement": "import orders.service -> orders.service (internal)"
+        }
+      ]
+    },
+    {
+      "source": "order_service",
+      "target": "notification_service",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:order_service->notification_service",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "orders/service.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import notify.sender -> notify.sender (internal)"
+        }
+      ]
+    },
+    {
+      "source": "web_app",
+      "target": "api_gateway",
+      "reflexion": "convergence",
+      "verdict": "allowed",
+      "rule_id": "DESIGN:web_app->api_gateway",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "webapp/views.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import gateway.client -> gateway.client (internal)"
+        }
+      ]
+    },
+    {
+      "source": "web_app",
+      "target": "order_service",
+      "reflexion": "divergence",
+      "verdict": "forbidden",
+      "rule_id": "R1",
+      "occurrences": 1,
+      "evidence": [
+        {
+          "file_path": "webapp/views.py",
+          "line_start": 3,
+          "line_end": 3,
+          "statement": "import orders.repository -> orders.repository (internal)"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "CCA-0001",
+      "fingerprint": "6a1b445598e77e0b",
+      "violation_type": "forbidden_dependency",
+      "severity": "high",
+      "confidence_score": 0.8963,
+      "confidence_breakdown": {
+        "mapping": 0.8963,
+        "rule_clarity": 1.0,
+        "evidence": 1.0,
+        "data_completeness": 1.0,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "confirmed",
+      "detected_by": "rule_engine",
+      "rule_id": "R1",
+      "description": "Web App không được gọi thẳng Order Service; mọi request phải đi qua API Gateway. (1 lần import)",
+      "source_component": "web_app",
+      "target_component": "order_service",
+      "expected_dependency": "web_app -/-> order_service (bị cấm)",
+      "actual_dependency": "web_app -> order_service",
+      "file_path": "webapp/views.py",
+      "line_number": 3,
+      "evidence": [
+        {
+          "file_path": "webapp/views.py",
+          "line_start": 3,
+          "line_end": 3,
+          "statement": "import orders.repository -> orders.repository (internal)"
+        }
+      ],
+      "recommended_action": "Loại bỏ phụ thuộc trực tiếp web_app -> order_service; đi qua component trung gian được phép (vd interface/use case) hoặc đảo phụ thuộc bằng abstraction.",
+      "carried_over": false,
+      "scenario": "wrong",
+      "scenario_detail": "forbidden_dependency",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "wrong",
+        "confidence": 0.7748,
+        "rationale": "Gần nhất với ví dụ fs-wrong-1 (confirm): Có câu lệnh import cụ thể vi phạm luật tường minh: presentation gọi tắt qua layer application. Tài liệu liên quan: [rule:R1] Luật R1 (forbid); [design:web_app] Thiết kế: Web App.",
+        "suggested_fix": "Chuyển lời gọi BookRepository vào service và để API chỉ gọi service.",
+        "retrieved_docs": [
+          "rule:R1",
+          "design:web_app",
+          "scenarios#kich-ban-2-code-sai-so-voi-thiet-ke",
+          "design:order_service"
+        ],
+        "cited_docs": [
+          "rule:R1",
+          "design:web_app"
+        ],
+        "few_shot_ids": [
+          "fs-wrong-1",
+          "fs-wrong-3",
+          "fs-missing-2"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    },
+    {
+      "finding_id": "CCA-0002",
+      "fingerprint": "34b34ffb83f1075f",
+      "violation_type": "unexpected_component",
+      "severity": "medium",
+      "confidence_score": 0.72,
+      "confidence_breakdown": {
+        "mapping": 0.9,
+        "rule_clarity": 0.8,
+        "evidence": 1.0,
+        "data_completeness": 1.0,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "confirmed",
+      "detected_by": "graph_matching",
+      "rule_id": "DESIGN:component-set",
+      "description": "Package 'analytics' (2 module) có trong mã nguồn nhưng không được mô tả trong kiến trúc thiết kế; không component thiết kế nào dùng tới -> ứng viên code chết.",
+      "source_component": "analytics",
+      "target_component": "",
+      "expected_dependency": "(không có trong thiết kế)",
+      "actual_dependency": "analytics tồn tại trong code",
+      "file_path": "analytics/report.py",
+      "line_number": 0,
+      "evidence": [
+        {
+          "file_path": "analytics/report.py",
+          "line_start": 0,
+          "line_end": 0,
+          "statement": "module analytics.report"
+        },
+        {
+          "file_path": "analytics/__init__.py",
+          "line_start": 0,
+          "line_end": 0,
+          "statement": "module analytics"
+        },
+        {
+          "file_path": "analytics/report.py",
+          "line_start": 2,
+          "line_end": 2,
+          "statement": "import orders.repository -> orders.repository (internal)"
+        }
+      ],
+      "recommended_action": "Bổ sung 'analytics' vào tài liệu kiến trúc (nếu là component hợp lệ) hoặc gộp vào component phù hợp; nếu là import tới package không tồn tại, sửa import.",
+      "carried_over": false,
+      "scenario": "junk",
+      "scenario_detail": "orphan",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "junk",
+        "confidence": 0.6584,
+        "rationale": "Gần nhất với ví dụ fs-junk-1 (confirm): Không có phụ thuộc đi vào package này từ kiến trúc: ứng viên code chết. Tài liệu liên quan: [scenarios#kich-ban-4-code-rac-thiet-ke-khong-co] Bốn kịch bản đối chiếu kiến trúc và mã nguồn - Kịch bản 4 - code rác, thiết kế không có; [erosion_drift#dau-hieu-erosion] Architecture erosion và architecture drift - Dấu hiệu erosion.",
+        "suggested_fix": "Kiểm tra entry point/script; nếu không dùng thì xóa package.",
+        "retrieved_docs": [
+          "scenarios#kich-ban-4-code-rac-thiet-ke-khong-co",
+          "erosion_drift#dau-hieu-erosion",
+          "scenarios#kich-ban-1-khop-hoan-toan",
+          "scenarios#kich-ban-3-code-thieu-so-voi-thiet-ke"
+        ],
+        "cited_docs": [
+          "scenarios#kich-ban-4-code-rac-thiet-ke-khong-co",
+          "erosion_drift#dau-hieu-erosion"
+        ],
+        "few_shot_ids": [
+          "fs-junk-1",
+          "fs-junk-3",
+          "fs-junk-4"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    },
+    {
+      "finding_id": "CCA-0003",
+      "fingerprint": "b14d524f9209c04f",
+      "violation_type": "reverse_dependency",
+      "severity": "medium",
+      "confidence_score": 0.5175,
+      "confidence_breakdown": {
+        "mapping": 0.7992,
+        "rule_clarity": 0.7,
+        "evidence": 1.0,
+        "data_completeness": 0.925,
+        "formula": "mapping * rule_clarity * evidence * data_completeness"
+      },
+      "status": "needs_review",
+      "detected_by": "rule_engine",
+      "rule_id": "DESIGN:order_service->notification_service",
+      "description": "Thiết kế quy định order_service -> notification_service, nhưng code có chiều ngược lại notification_service -> order_service. (1 lần import)",
+      "source_component": "notification_service",
+      "target_component": "order_service",
+      "expected_dependency": "order_service -> notification_service (một chiều)",
+      "actual_dependency": "notification_service -> order_service",
+      "file_path": "notify/sender.py",
+      "line_number": 7,
+      "evidence": [
+        {
+          "file_path": "notify/sender.py",
+          "line_start": 7,
+          "line_end": 7,
+          "statement": "import orders.service -> orders.service (internal)"
+        }
+      ],
+      "recommended_action": "Kiểm tra chiều phụ thuộc notification_service -> order_service: thiết kế chỉ cho phép order_service -> notification_service. Tách phần dùng chung ra module riêng hoặc dùng callback/event.",
+      "carried_over": false,
+      "scenario": "wrong",
+      "scenario_detail": "reverse_dependency",
+      "llm_review": {
+        "provider": "local-fewshot",
+        "model": "knn-fewshot-v1",
+        "is_llm": false,
+        "verdict": "confirm",
+        "scenario": "wrong",
+        "confidence": 0.8452,
+        "rationale": "Gần nhất với ví dụ fs-wrong-3 (confirm): Phụ thuộc ngược chiều thiết kế tạo chu trình giữa hai service; thiết kế yêu cầu giao tiếp một chiều bằng event. Tài liệu liên quan: [design:notification_service] Thiết kế: Notification Service; [design:order_service] Thiết kế: Order Service.",
+        "suggested_fix": "Gửi dữ liệu cần thiết trong event thay vì để Notification gọi ngược Order Service.",
+        "retrieved_docs": [
+          "design:notification_service",
+          "design:order_service",
+          "rule:R1",
+          "scenarios#kich-ban-2-code-sai-so-voi-thiet-ke"
+        ],
+        "cited_docs": [
+          "design:notification_service",
+          "design:order_service"
+        ],
+        "few_shot_ids": [
+          "fs-wrong-3",
+          "fs-missing-2",
+          "fs-wrong-2"
+        ],
+        "cached": false,
+        "status_changed": false
+      }
+    }
+  ],
+  "drift": {
+    "design_components": 4,
+    "actual_components": 5,
+    "matched_components": 4,
+    "design_dependencies": 3,
+    "actual_dependencies": 6,
+    "convergences": 3,
+    "divergences": 3,
+    "absences": 0,
+    "component_coverage": 1.0,
+    "dependency_conformance": 0.5,
+    "dependency_realization": 1.0,
+    "structural_similarity": 0.6364,
+    "drift_score": 0.3636,
+    "violation_index": 0.1174,
+    "drift_level": "moderate",
+    "previous_drift_score": null,
+    "drift_trend": null,
+    "changed_relations": {
+      "added_dependencies": [
+        "code:analytics -> order_service",
+        "notification_service -> order_service",
+        "web_app -> order_service"
+      ],
+      "removed_dependencies": [],
+      "added_components": [
+        "code:analytics"
+      ],
+      "missing_components": []
+    }
+  },
+  "scenario_report": {
+    "verdict": "mismatch",
+    "primary_scenario": "wrong",
+    "scenarios_present": [
+      "match",
+      "wrong",
+      "junk"
+    ],
+    "counts": {
+      "match": 7,
+      "wrong": 2,
+      "missing": 0,
+      "junk": 1,
+      "uncertain": 0
+    },
+    "match": [
+      {
+        "kind": "component",
+        "source": "web_app",
+        "target": "webapp",
+        "detail": "exact+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "api_gateway",
+        "target": "gateway",
+        "detail": "core+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "order_service",
+        "target": "orders",
+        "detail": "core+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "component",
+        "source": "notification_service",
+        "target": "notify",
+        "detail": "fuzzy+structure",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "api_gateway",
+        "target": "order_service",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "order_service",
+        "target": "notification_service",
+        "detail": "convergence",
+        "finding_ids": []
+      },
+      {
+        "kind": "dependency",
+        "source": "web_app",
+        "target": "api_gateway",
+        "detail": "convergence",
+        "finding_ids": []
+      }
+    ],
+    "wrong": [
+      {
+        "kind": "dependency",
+        "source": "web_app",
+        "target": "order_service",
+        "detail": "forbidden_dependency",
+        "finding_ids": [
+          "CCA-0001"
+        ]
+      },
+      {
+        "kind": "dependency",
+        "source": "notification_service",
+        "target": "order_service",
+        "detail": "reverse_dependency",
+        "finding_ids": [
+          "CCA-0003"
+        ]
+      }
+    ],
+    "missing": [],
+    "junk": [
+      {
+        "kind": "component",
+        "source": "analytics",
+        "target": "",
+        "detail": "orphan",
+        "finding_ids": [
+          "CCA-0002"
+        ]
+      }
+    ],
+    "uncertain": [],
+    "match_ratio": 0.7,
+    "summary": "Kết luận: KHÔNG khớp; kịch bản chính: code sai so với thiết kế. Tỷ lệ khớp 70% (7 phần tử khớp). Code sai so với thiết kế (2): web_app -> order_service, notification_service -> order_service. Code rác/ngoài kiến trúc (1): analytics (orphan).",
+    "summary_by": "template"
+  },
+  "review": {
+    "mode": "local",
+    "provider": "local-fewshot",
+    "model": "knn-fewshot-v1",
+    "policy": "advisory",
+    "reviewed": 3,
+    "llm_calls": 0,
+    "cache_hits": 0,
+    "fallbacks": 0,
+    "local_fallback_reviews": 0,
+    "status_changes": 0,
+    "disagreements": 0,
+    "rag_documents": 28,
+    "few_shot_pool": 19,
+    "errors": []
+  },
+  "statistics": {
+    "total_findings": 3,
+    "open_violations": 3,
+    "by_type": {
+      "forbidden_dependency": 1,
+      "unexpected_component": 1,
+      "reverse_dependency": 1
+    },
+    "by_severity": {
+      "high": 1,
+      "medium": 2
+    },
+    "by_status": {
+      "confirmed": 2,
+      "needs_review": 1
+    },
+    "valid_dependencies": 3,
+    "invalid_dependencies": 2,
+    "undetermined_dependencies": 1
+  },
+  "visualization": {
+    "nodes": [
+      {
+        "id": "user",
+        "label": "Khách hàng",
+        "kind": "design",
+        "status": "context",
+        "layer": null
+      },
+      {
+        "id": "web_app",
+        "label": "Web App",
+        "kind": "design",
+        "status": "matched",
+        "layer": null
+      },
+      {
+        "id": "api_gateway",
+        "label": "API Gateway",
+        "kind": "design",
+        "status": "matched",
+        "layer": null
+      },
+      {
+        "id": "order_service",
+        "label": "Order Service",
+        "kind": "design",
+        "status": "matched",
+        "layer": null
+      },
+      {
+        "id": "database",
+        "label": "Database",
+        "kind": "design",
+        "status": "context",
+        "layer": null
+      },
+      {
+        "id": "notification_service",
+        "label": "Notification Service",
+        "kind": "design",
+        "status": "matched",
+        "layer": null
+      },
+      {
+        "id": "code:analytics",
+        "label": "analytics",
+        "kind": "code",
+        "status": "unexpected",
+        "layer": null
+      }
+    ],
+    "edges": [
+      {
+        "source": "api_gateway",
+        "target": "order_service",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      },
+      {
+        "source": "code:analytics",
+        "target": "order_service",
+        "reflexion": "divergence",
+        "verdict": "undetermined",
+        "weight": 1
+      },
+      {
+        "source": "notification_service",
+        "target": "order_service",
+        "reflexion": "divergence",
+        "verdict": "forbidden",
+        "weight": 1
+      },
+      {
+        "source": "order_service",
+        "target": "notification_service",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      },
+      {
+        "source": "web_app",
+        "target": "api_gateway",
+        "reflexion": "convergence",
+        "verdict": "allowed",
+        "weight": 1
+      },
+      {
+        "source": "web_app",
+        "target": "order_service",
+        "reflexion": "divergence",
+        "verdict": "forbidden",
+        "weight": 1
+      }
+    ]
+  },
+  "performance": {
+    "total_ms": 13.654,
+    "phase_ms": {
+      "normalize": 0.611,
+      "monitor": 0.109,
+      "analyze": 0.875,
+      "plan": 0.035,
+      "graph_matching": 7.508,
+      "rule_engine_and_drift": 0.69,
+      "execute": 8.203,
+      "review": 3.782,
+      "knowledge": 0.039
+    },
+    "design_nodes": 6,
+    "design_edges": 5,
+    "code_modules": 11,
+    "code_dependencies": 9,
+    "internal_dependencies": 7,
+    "unresolved_imports": 0,
+    "llm_calls": 0
+  },
+  "warnings": [
+    "Sinh bởi consistency_agent.tools.sca_fallback (ast), không phải SCA tree-sitter."
+  ],
+  "errors": []
+}

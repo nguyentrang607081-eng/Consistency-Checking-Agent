@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "system_name": "Merged Architecture",
+  "nodes": [
+    {"id": "user", "name": "Khách hàng", "type": "actor", "c4_level": "context", "properties": {}, "source": "diagram", "confidence": 1.0, "evidence": null},
+    {"id": "web_app", "name": "Web App", "type": "service", "c4_level": "container", "properties": {"tech_stack": "React"}, "source": "diagram", "confidence": 1.0, "evidence": null},
+    {"id": "api_gateway", "name": "API Gateway", "type": "service", "c4_level": "container", "properties": {"tech_stack": "Node.js"}, "source": "diagram", "confidence": 1.0, "evidence": null},
+    {"id": "order_service", "name": "Order Service", "type": "service", "c4_level": "container", "properties": {"tech_stack": "Java"}, "source": "diagram", "confidence": 1.0, "evidence": null},
+    {"id": "database", "name": "Database", "type": "database", "c4_level": "container", "properties": {"tech_stack": "PostgreSQL"}, "source": "diagram", "confidence": 1.0, "evidence": null},
+    {"id": "notification_service", "name": "Notification Service", "type": "service", "c4_level": "container", "properties": {"tech_stack": "Go"}, "source": "text", "confidence": 0.85, "evidence": "hệ thống còn có một Notification Service (viết bằng Go) chuyên gửi email xác nhận"}
+  ],
+  "edges": [
+    {"id": "edge_0", "source_id": "user", "target_id": "web_app", "relationship_type": "sync_call", "label": "Sử dụng (HTTPS)", "source": "diagram", "confidence": 1.0},
+    {"id": "edge_1", "source_id": "web_app", "target_id": "api_gateway", "relationship_type": "sync_call", "label": "Gọi API (JSON)", "source": "diagram", "confidence": 1.0},
+    {"id": "edge_2", "source_id": "api_gateway", "target_id": "order_service", "relationship_type": "sync_call", "label": "Chuyển tiếp (gRPC)", "source": "diagram", "confidence": 1.0},
+    {"id": "edge_3", "source_id": "order_service", "target_id": "database", "relationship_type": "data_flow", "label": "Đọc/Ghi (SQL)", "source": "diagram", "confidence": 1.0},
+    {"id": "edge_text_0", "source_id": "order_service", "target_id": "notification_service", "relationship_type": "async_call", "label": "Gửi xác nhận (Kafka)", "source": "text", "confidence": 0.8}
+  ],
+  "warnings": []
+}
